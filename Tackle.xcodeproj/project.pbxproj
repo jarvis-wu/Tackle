@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */; };
+		315D54A3200C536900EDAF61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 315D54A2200C536900EDAF61 /* GoogleService-Info.plist */; };
 		3199D965200A8107003D85FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D964200A8107003D85FB /* AppDelegate.swift */; };
 		3199D967200A8107003D85FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D966200A8107003D85FB /* HomeViewController.swift */; };
 		3199D969200A8107003D85FB /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D968200A8107003D85FB /* MeViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		1591D9A313AE7836FFF55345 /* Pods-TackleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TackleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TackleUITests/Pods-TackleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		315D54A2200C536900EDAF61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3199D961200A8107003D85FB /* Tackle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tackle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3199D964200A8107003D85FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3199D966200A8107003D85FB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				3199D96D200A8107003D85FB /* Assets.xcassets */,
 				3199D96F200A8107003D85FB /* LaunchScreen.storyboard */,
 				3199D972200A8107003D85FB /* Info.plist */,
+				315D54A2200C536900EDAF61 /* GoogleService-Info.plist */,
 			);
 			path = Tackle;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3199D971200A8107003D85FB /* LaunchScreen.storyboard in Resources */,
+				315D54A3200C536900EDAF61 /* GoogleService-Info.plist in Resources */,
 				3199D96E200A8107003D85FB /* Assets.xcassets in Resources */,
 				3199D96C200A8107003D85FB /* Main.storyboard in Resources */,
 			);
@@ -430,9 +434,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tackle/Pods-Tackle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

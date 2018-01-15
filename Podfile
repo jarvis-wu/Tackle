@@ -6,6 +6,7 @@ target 'Tackle' do
   use_frameworks!
 
   # Pods for Tackle
+    pod 'Firebase/Core'
 
   target 'TackleTests' do
     inherit! :search_paths
