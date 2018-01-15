@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */; };
 		3199D965200A8107003D85FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D964200A8107003D85FB /* AppDelegate.swift */; };
 		3199D967200A8107003D85FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D966200A8107003D85FB /* HomeViewController.swift */; };
 		3199D969200A8107003D85FB /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D968200A8107003D85FB /* MeViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1591D9A313AE7836FFF55345 /* Pods-TackleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TackleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TackleUITests/Pods-TackleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		3199D961200A8107003D85FB /* Tackle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tackle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3199D964200A8107003D85FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3199D966200A8107003D85FB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				3199D964200A8107003D85FB /* AppDelegate.swift */,
 				3199D966200A8107003D85FB /* HomeViewController.swift */,
+				315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */,
 				3199D968200A8107003D85FB /* MeViewController.swift */,
 				3199D96A200A8107003D85FB /* Main.storyboard */,
 				3199D96D200A8107003D85FB /* Assets.xcassets */,
@@ -461,6 +464,7 @@
 				3199D969200A8107003D85FB /* MeViewController.swift in Sources */,
 				3199D965200A8107003D85FB /* AppDelegate.swift in Sources */,
 				3199D967200A8107003D85FB /* HomeViewController.swift in Sources */,
+				315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
