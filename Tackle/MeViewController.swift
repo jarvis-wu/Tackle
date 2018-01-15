@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  MeViewController.swift
 //  Tackle
 //
 //  Created by Zhaowei Wu on 2018-01-13.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class MeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

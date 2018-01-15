@@ -1,18 +1,19 @@
 //
-//  FirstViewController.swift
+//  NotificationsViewController.swift
 //  Tackle
 //
-//  Created by Zhaowei Wu on 2018-01-13.
+//  Created by Zhaowei Wu on 2018-01-14.
 //  Copyright © 2018 Jarvis Zhaowei Wu. All rights reserved.
 //
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class NotificationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +23,3 @@ class FirstViewController: UIViewController {
 
 
 }
-
