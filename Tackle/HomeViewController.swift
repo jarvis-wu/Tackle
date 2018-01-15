@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  HomeViewController.swift
 //  Tackle
 //
 //  Created by Zhaowei Wu on 2018-01-13.
@@ -8,11 +8,15 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var navBarItem: UINavigationItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let titleImageView = UIImageView(image: UIImage(named: "plane"))
+        titleImageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = titleImageView
     }
 
     override func didReceiveMemoryWarning() {

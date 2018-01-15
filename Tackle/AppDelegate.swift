@@ -16,13 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
-        let tackleYellowDark = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
+        let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
         let navigationBarAppearance = UINavigationBar.appearance()
         let tabBarAppearance = UITabBar.appearance()
         navigationBarAppearance.barTintColor = tackleYellowLight
-        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : tackleYellowDark]
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : tackleYellowMid]
         tabBarAppearance.barTintColor = tackleYellowLight
-        tabBarAppearance.tintColor = tackleYellowDark
+        tabBarAppearance.tintColor = tackleYellowMid
         return true
     }
 
