@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuthUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,15 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
-        let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
-        let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
-        let navigationBarAppearance = UINavigationBar.appearance()
-        let tabBarAppearance = UITabBar.appearance()
-        navigationBarAppearance.barTintColor = tackleYellowLight
-        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : tackleYellowMid]
-        tabBarAppearance.barTintColor = tackleYellowLight
-        tabBarAppearance.tintColor = tackleYellowMid
+        FirebaseApp.configure()    
+        configureUI()
         return true
     }
 
@@ -48,6 +42,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
+        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
+            return true
+        }
+        // other url handling goes here
+        return false
+    }
+    
+    func configureUI() {
+        let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
+        let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
+        let navigationBarAppearance = UINavigationBar.appearance()
+        let tabBarAppearance = UITabBar.appearance()
+        navigationBarAppearance.barTintColor = tackleYellowLight
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : tackleYellowMid]
+        tabBarAppearance.barTintColor = tackleYellowLight
+        tabBarAppearance.tintColor = tackleYellowMid
     }
 
 

@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import FirebaseAuthUI
 
 class MeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func signOutButtonTapped(_ sender: UIButton) {
+        try! FUIAuth.defaultAuthUI()?.signOut()
+        let loginVC = LoginViewController()
+        self.present(loginVC, animated: true, completion: nil)
     }
-
+    
 
 }
 

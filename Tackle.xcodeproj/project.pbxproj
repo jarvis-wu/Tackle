@@ -17,6 +17,7 @@
 		3199D971200A8107003D85FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3199D96F200A8107003D85FB /* LaunchScreen.storyboard */; };
 		3199D97C200A8107003D85FB /* TackleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D97B200A8107003D85FB /* TackleTests.swift */; };
 		3199D987200A8107003D85FB /* TackleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D986200A8107003D85FB /* TackleUITests.swift */; };
+		31FE1881201545FD00243009 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1880201545FD00243009 /* LoginViewController.swift */; };
 		59BDACA6B59870F06ADAE50D /* Pods_TackleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FCC9065CD1C64CAA14550A /* Pods_TackleUITests.framework */; };
 		810414A80240B10147121DFD /* Pods_Tackle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D34FCAFE0373CC23DEAF123 /* Pods_Tackle.framework */; };
 		B3E148AAB9AFDCC3E4E0150B /* Pods_TackleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC87A5531D5D2F2BAF74A35 /* Pods_TackleTests.framework */; };
@@ -57,6 +58,7 @@
 		3199D982200A8107003D85FB /* TackleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TackleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3199D986200A8107003D85FB /* TackleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackleUITests.swift; sourceTree = "<group>"; };
 		3199D988200A8107003D85FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31FE1880201545FD00243009 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32C07C1251ABD5DC4DF73CDA /* Pods-Tackle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tackle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tackle/Pods-Tackle.debug.xcconfig"; sourceTree = "<group>"; };
 		39FCC9065CD1C64CAA14550A /* Pods_TackleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TackleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D34FCAFE0373CC23DEAF123 /* Pods_Tackle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tackle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,12 +123,13 @@
 			isa = PBXGroup;
 			children = (
 				3199D964200A8107003D85FB /* AppDelegate.swift */,
+				31FE1880201545FD00243009 /* LoginViewController.swift */,
 				3199D966200A8107003D85FB /* HomeViewController.swift */,
 				315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */,
 				3199D968200A8107003D85FB /* MeViewController.swift */,
 				3199D96A200A8107003D85FB /* Main.storyboard */,
-				3199D96D200A8107003D85FB /* Assets.xcassets */,
 				3199D96F200A8107003D85FB /* LaunchScreen.storyboard */,
+				3199D96D200A8107003D85FB /* Assets.xcassets */,
 				3199D972200A8107003D85FB /* Info.plist */,
 				315D54A2200C536900EDAF61 /* GoogleService-Info.plist */,
 			);
@@ -520,6 +523,7 @@
 				3199D969200A8107003D85FB /* MeViewController.swift in Sources */,
 				3199D965200A8107003D85FB /* AppDelegate.swift in Sources */,
 				3199D967200A8107003D85FB /* HomeViewController.swift in Sources */,
+				31FE1881201545FD00243009 /* LoginViewController.swift in Sources */,
 				315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
