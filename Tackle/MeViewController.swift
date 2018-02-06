@@ -13,6 +13,15 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     
+    struct MenuItem {
+        var labelName: String
+        var leftImageName: String
+    }
+    
+    private let menuItemList: [MenuItem] = [
+        MenuItem(labelName: "Sign out", leftImageName: "shutdown")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -35,12 +44,13 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return menuItemList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("MeTableViewCell", owner: self, options: nil)?.first as! MeTableViewCell
-        cell.label.text = "Sign out"
+        cell.label.text = menuItemList[indexPath.row].labelName
+        cell.leftImageView.image = UIImage(named: menuItemList[indexPath.row].leftImageName)
         return cell
     }
     
@@ -49,9 +59,14 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
             showSignOutAlert()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
     }
 
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,21 +21,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yck-Ot-VkA">
-                        <rect key="frame" x="10" y="5" width="40" height="40"/>
+                        <rect key="frame" x="10" y="7.5" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="yck-Ot-VkA" secondAttribute="height" multiplier="1:1" id="bsA-r5-eC9"/>
-                            <constraint firstAttribute="height" constant="40" id="wBH-yO-KyK"/>
+                            <constraint firstAttribute="height" constant="35" id="wBH-yO-KyK"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BTv-3u-N4e">
-                        <rect key="frame" x="325" y="5" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="BTv-3u-N4e">
+                        <rect key="frame" x="340" y="12.5" width="25" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="qef-6a-75E"/>
+                            <constraint firstAttribute="height" constant="25" id="qef-6a-75E"/>
                             <constraint firstAttribute="width" secondItem="BTv-3u-N4e" secondAttribute="height" multiplier="1:1" id="vr2-7h-W94"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8n-KG-aGe">
-                        <rect key="frame" x="60" y="14.5" width="255" height="21"/>
+                        <rect key="frame" x="55" y="14.5" width="275" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -60,4 +60,7 @@
             <point key="canvasLocation" x="6.5" y="149"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="forward" width="100" height="100"/>
+    </resources>
 </document>
