@@ -20,11 +20,16 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     private let menuItemList: [[MenuItem]] = [
         [
+            MenuItem(labelName: "Events", leftImageName: "calendar"),
+            MenuItem(labelName: "Friends", leftImageName: "contacts"),
+            MenuItem(labelName: "Files", leftImageName: "folder")
+        ],
+        [
             MenuItem(labelName: "Settings", leftImageName: "gears")
         ],
         [
             MenuItem(labelName: "Get help", leftImageName: "user-manual"),
-            MenuItem(labelName: "Give feedback", leftImageName: "apple-app-store"),
+            MenuItem(labelName: "Feedbacks", leftImageName: "apple-app-store"),
             MenuItem(labelName: "About Tackle", leftImageName: "about"),
             MenuItem(labelName: "Sign out", leftImageName: "shutdown")
         ]
@@ -37,7 +42,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     private func showSignOutAlert() {
-        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
             self.signOut()
@@ -92,8 +97,9 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 2 {
-            if indexPath.row == 3 {
+        let numOfSections = numberOfSections(in: tableView)
+        if indexPath.section == numOfSections {
+            if indexPath.row == tableView.numberOfRows(inSection: numOfSections) {
                 showSignOutAlert()
             }
         }
