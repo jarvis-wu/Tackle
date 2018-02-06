@@ -18,8 +18,16 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         var leftImageName: String
     }
     
-    private let menuItemList: [MenuItem] = [
-        MenuItem(labelName: "Sign out", leftImageName: "shutdown")
+    private let menuItemList: [[MenuItem]] = [
+        [
+            MenuItem(labelName: "Settings", leftImageName: "gears")
+        ],
+        [
+            MenuItem(labelName: "Get help", leftImageName: "user-manual"),
+            MenuItem(labelName: "Give feedback", leftImageName: "apple-app-store"),
+            MenuItem(labelName: "About Tackle", leftImageName: "about"),
+            MenuItem(labelName: "Sign out", leftImageName: "shutdown")
+        ]
     ]
     
     override func viewDidLoad() {
@@ -29,7 +37,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     private func showSignOutAlert() {
-        let alertVC = UIAlertController(title: "Sign out", message: "Are you sure that you want to sign out?", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
             self.signOut()
@@ -43,30 +51,60 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.present(loginVC, animated: true, completion: nil)
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return menuItemList.count + 1
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItemList.count
+        var numberOfRows = 1
+        if section != 0 {
+            numberOfRows = menuItemList[section - 1].count
+        }
+        return numberOfRows
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("MeTableViewCell", owner: self, options: nil)?.first as! MeTableViewCell
-        cell.label.text = menuItemList[indexPath.row].labelName
-        cell.leftImageView.image = UIImage(named: menuItemList[indexPath.row].leftImageName)
-        return cell
+        var resultCell = UITableViewCell()
+        if indexPath.section != 0 {
+            let cell = Bundle.main.loadNibNamed("MeTableViewCell", owner: self, options: nil)?.first as! MeTableViewCell
+            cell.label.text = menuItemList[indexPath.section - 1][indexPath.row].labelName
+            cell.leftImageView.image = UIImage(named: menuItemList[indexPath.section - 1][indexPath.row].leftImageName)
+            resultCell = cell
+        } else {
+            let cell = Bundle.main.loadNibNamed("BigMeTableViewCell", owner: self, options: nil)?.first as! BigMeTableViewCell
+            cell.leftImageView.image = UIImage(named: "user-male")
+            cell.topLabel.text = Auth.auth().currentUser?.displayName
+            cell.bottomLabel.text = Auth.auth().currentUser?.email
+            cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
+            cell.leftImageView.layer.masksToBounds = true
+            resultCell = cell
+        }
+        return resultCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        var height: CGFloat = Constants.UI.meTableViewCellHeight
+        if indexPath.section == 0 {
+            height = Constants.UI.bigMeTableViewCellHeight
+        }
+        return height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 0 {
-            showSignOutAlert()
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                showSignOutAlert()
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return Constants.UI.meTableViewSectionHeaderHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return Constants.UI.meTableViewSectionFooterHeight
     }
 
 }
