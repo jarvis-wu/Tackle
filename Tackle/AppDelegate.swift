@@ -59,9 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationBarAppearance = UINavigationBar.appearance()
         let tabBarAppearance = UITabBar.appearance()
         navigationBarAppearance.barTintColor = tackleYellowLight
+        navigationBarAppearance.tintColor = tackleYellowMid
         navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : tackleYellowMid]
         tabBarAppearance.barTintColor = tackleYellowLight
         tabBarAppearance.tintColor = tackleYellowMid
+        self.window?.backgroundColor = UIColor.white
     }
 
 

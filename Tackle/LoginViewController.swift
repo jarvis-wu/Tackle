@@ -39,9 +39,10 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
     
     func login() {
         let authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
         let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
+        authUI?.delegate = self
         authUI?.providers = providers
+        authUI?.isSignInWithEmailHidden = true
         let authViewController = authUI?.authViewController()
         present(authViewController!, animated: true, completion: nil)
     }
