@@ -79,10 +79,11 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         } else {
             let cell = Bundle.main.loadNibNamed("BigMeTableViewCell", owner: self, options: nil)?.first as! BigMeTableViewCell
             cell.leftImageView.image = UIImage(named: "user-male")
-            cell.topLabel.text = Auth.auth().currentUser?.displayName
-            cell.bottomLabel.text = Auth.auth().currentUser?.email
             cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
             cell.leftImageView.layer.masksToBounds = true
+            cell.topLabel.text = Auth.auth().currentUser?.displayName
+            cell.bottomLabel.text = Auth.auth().currentUser?.email
+            cell.middleImageView.image = UIImage(named: "edit")
             resultCell = cell
         }
         return resultCell
