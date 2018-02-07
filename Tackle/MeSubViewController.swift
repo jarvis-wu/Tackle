@@ -15,6 +15,7 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private let menuItemList: [[MenuItem]] = [
         [
             MenuItem(labelName: "Rate the app", leftImageName: "apple-app-store"),
+            MenuItem(labelName: "Give feedbacks", leftImageName: "post"),
             MenuItem(labelName: "Developer", leftImageName: "hammer"),
             MenuItem(labelName: "About Tackle", leftImageName: "about")
         ]

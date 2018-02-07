@@ -27,9 +27,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         [
             MenuItem(labelName: "Settings", leftImageName: "gears"),
             MenuItem(labelName: "Get help", leftImageName: "help"),
-            MenuItem(labelName: "More", leftImageName: "view-more")
-//            MenuItem(labelName: "Feedbacks", leftImageName: "apple-app-store"),
-//            MenuItem(labelName: "About Tackle", leftImageName: "about")
+            MenuItem(labelName: "More", leftImageName: "more")
         ],
         [
             MenuItem(labelName: "Sign out", leftImageName: "shutdown")
@@ -78,7 +76,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             resultCell = cell
         } else {
             let cell = Bundle.main.loadNibNamed("BigMeTableViewCell", owner: self, options: nil)?.first as! BigMeTableViewCell
-            cell.leftImageView.image = UIImage(named: "user-male")
+            cell.leftImageView.image = UIImage(named: getRandomAvatar())
             cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
             cell.leftImageView.layer.masksToBounds = true
             cell.topLabel.text = Auth.auth().currentUser?.displayName
@@ -122,6 +120,12 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Will trigger \(segue.identifier ?? "unknown") segue")
+    }
+    
+    private func getRandomAvatar() -> String {
+        let avatars = Constants.Avatars.avatars
+        let randomIndex = Int(arc4random_uniform(UInt32(avatars.count)))
+        return avatars[randomIndex]
     }
 
 }

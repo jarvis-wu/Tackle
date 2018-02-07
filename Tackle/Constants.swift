@@ -23,4 +23,8 @@ struct Constants {
         static let logoutAlertMessage = "Are you sure that you want to sign out?"
     }
     
+    struct Avatars {
+        static let avatars = ["corgi", "pelican", "slug-eating", "unicorn"]
+    }
+    
 }
