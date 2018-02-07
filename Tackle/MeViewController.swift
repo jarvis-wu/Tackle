@@ -25,12 +25,13 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             MenuItem(labelName: "Files", leftImageName: "folder")
         ],
         [
-            MenuItem(labelName: "Settings", leftImageName: "gears")
+            MenuItem(labelName: "Settings", leftImageName: "gears"),
+            MenuItem(labelName: "Get help", leftImageName: "help"),
+            MenuItem(labelName: "More", leftImageName: "view-more")
+//            MenuItem(labelName: "Feedbacks", leftImageName: "apple-app-store"),
+//            MenuItem(labelName: "About Tackle", leftImageName: "about")
         ],
         [
-            MenuItem(labelName: "Get help", leftImageName: "user-manual"),
-            MenuItem(labelName: "Feedbacks", leftImageName: "apple-app-store"),
-            MenuItem(labelName: "About Tackle", leftImageName: "about"),
             MenuItem(labelName: "Sign out", leftImageName: "shutdown")
         ]
     ]
@@ -98,8 +99,13 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let numOfSections = numberOfSections(in: tableView)
-        if indexPath.section == numOfSections {
-            if indexPath.row == tableView.numberOfRows(inSection: numOfSections) {
+        if indexPath.section == 2 {
+            if indexPath.row == 2 {
+                
+            }
+        }
+        if indexPath.section == numOfSections - 1 {
+            if indexPath.row == tableView.numberOfRows(inSection: numOfSections - 1) - 1 {
                 showSignOutAlert()
             }
         }
