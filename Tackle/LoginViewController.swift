@@ -54,3 +54,10 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
     }
 
 }
+
+extension FUIAuthBaseViewController {
+    open override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.leftBarButtonItem = nil
+    }
+}
+
