@@ -16,6 +16,10 @@ class BigMeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bottomLabel: UILabel!
 
+    @IBOutlet weak var middleImageView: UIImageView!
+    
+    @IBOutlet weak var rightImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
