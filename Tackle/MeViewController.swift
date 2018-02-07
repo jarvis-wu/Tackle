@@ -101,7 +101,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let numOfSections = numberOfSections(in: tableView)
         if indexPath.section == 2 {
             if indexPath.row == 2 {
-                
+                performSegue(withIdentifier: "showMore", sender: self)
             }
         }
         if indexPath.section == numOfSections - 1 {
@@ -117,6 +117,10 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return Constants.UI.meTableViewSectionFooterHeight
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Will trigger \(segue.identifier ?? "unknown") segue")
     }
 
 }
