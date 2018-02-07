@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="1517.5999999999999" y="339.58020989505252"/>
         </scene>
-        <!--View Controller-->
+        <!--Me Sub View Controller-->
         <scene sceneID="Pj3-nr-OFY">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="2Aa-3i-PcE" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="2Aa-3i-PcE" customClass="MeSubViewController" customModule="Tackle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7e5-E4-Zq0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +153,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7RN-w5-uEZ"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="0Lz-uW-Kfr" id="Qsi-MW-U0X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pn-CG-cMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

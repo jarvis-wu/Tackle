@@ -9,14 +9,14 @@
 import UIKit
 import FirebaseAuthUI
 
+struct MenuItem {
+    var labelName: String
+    var leftImageName: String
+}
+
 class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    struct MenuItem {
-        var labelName: String
-        var leftImageName: String
-    }
     
     private let menuItemList: [[MenuItem]] = [
         [
@@ -88,14 +88,6 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return resultCell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height: CGFloat = Constants.UI.meTableViewCellHeight
-        if indexPath.section == 0 {
-            height = Constants.UI.bigMeTableViewCellHeight
-        }
-        return height
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let numOfSections = numberOfSections(in: tableView)
@@ -109,6 +101,14 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 showSignOutAlert()
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height: CGFloat = Constants.UI.meTableViewCellHeight
+        if indexPath.section == 0 {
+            height = Constants.UI.bigMeTableViewCellHeight
+        }
+        return height
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
