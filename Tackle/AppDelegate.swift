@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
-import Instabug
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()    
         configureUI()
-        configureInstabug()
+        TackleManager.shared.startInstabug()
         return true
     }
 
@@ -65,12 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarAppearance.tintColor = Constants.Colors.tackleYellowMid
         self.window?.backgroundColor = UIColor.white
     }
-    
-    func configureInstabug() {
-        Instabug.start(withToken: "431a498a648f08224b6aee8894ff6cc4", invocationEvent: .shake)
-        Instabug.setPrimaryColor(Constants.Colors.instabugYellow)
-    }
-
 
 }
 

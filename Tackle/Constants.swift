@@ -80,6 +80,9 @@ struct Constants {
                     ],
                     [
                         MenuItem(labelName: "Color & text", leftImageName: "tune")
+                    ],
+                    [
+                        MenuItem(labelName: "Instabug", leftImageName: "bug")
                     ]
                 ],
                 [       // 3-1 more
@@ -101,6 +104,10 @@ struct Constants {
             ]
         ]
         
+    }
+    
+    struct UserDefaultsKeys {
+        static let InstabugIsOn = "instabug"
     }
     
 }
