@@ -65,7 +65,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.leftImageView.layer.masksToBounds = true
             cell.topLabel.text = Auth.auth().currentUser?.displayName
             cell.bottomLabel.text = Auth.auth().currentUser?.email
-            cell.middleImageView.image = UIImage(named: "edit")
+            cell.middleImageView.image = UIImage(named: "edit-gray")
             resultCell = cell
         }
         return resultCell

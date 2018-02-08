@@ -36,7 +36,9 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = Bundle.main.loadNibNamed("MeTableViewCell", owner: self, options: nil)?.first as! MeTableViewCell
         cell.label.text = menuItemList[indexPath.section][indexPath.row].labelName
         cell.leftImageView.image = UIImage(named: menuItemList[indexPath.section][indexPath.row].leftImageName)
+        // TODO: consider using switch case here
         if sourceIndexPath == IndexPath(row: 0, section: 3) && indexPath == IndexPath(row: 0, section: 2) { // instabug switch
+            cell.middleImageView.image = UIImage(named: "help-gray")
             let switchView = UISwitch()
             if let switchState = TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) {
                 switchView.isOn = switchState as! Bool
@@ -52,6 +54,11 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if sourceIndexPath == IndexPath(row: 0, section: 3) && indexPath == IndexPath(row: 0, section: 2) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2, execute: {
+                TackleManager.shared.showInstabugIntroMessage()
+            })
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

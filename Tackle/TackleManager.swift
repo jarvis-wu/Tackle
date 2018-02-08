@@ -14,6 +14,8 @@ class TackleManager {
     
     static let shared = TackleManager()
     
+    // MARK: Instabug
+    
     func startInstabug() {
         guard (TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) == nil) ||
             (TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) as! Bool == true)
@@ -37,9 +39,14 @@ class TackleManager {
         Instabug.setPromptOptionsEnabledWithBug(false, feedback: false, chat: false)
     }
     
+    func showInstabugIntroMessage() {
+        Instabug.showIntroMessage()
+    }
+    
+    // MARK: UserDefaults
+    
     func updateSetting(withKey key: String, withValue value: Any) {
         let defaults = UserDefaults.standard
-        // TODO: remove string literals to Constants and replace if stmt with switch case
         switch key {
         case Constants.UserDefaultsKeys.InstabugIsOn:
             let bool = value as! Bool
@@ -52,7 +59,6 @@ class TackleManager {
     
     func getSetting(withKey key: String) -> Any? {
         let defaults = UserDefaults.standard
-        // TODO: remove string literals to Constants and replace if stmt with switch case
         var result: Any?
         switch key {
         case Constants.UserDefaultsKeys.InstabugIsOn:
