@@ -13,6 +13,10 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     
+    private let menuItemList = Constants.MenuItemLists.mainMenuItemList
+    
+    private var destinationIndexPath: IndexPath!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -20,7 +24,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     private func showSignOutAlert() {
-        let alertVC = UIAlertController(title: "Sign out", message: "Are you sure that you want to sign out?", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
             self.signOut()
@@ -34,24 +38,79 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.present(loginVC, animated: true, completion: nil)
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return menuItemList.count
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        var numberOfRows = 1
+        if section != 0 {
+            numberOfRows = menuItemList[section].count
+        }
+        return numberOfRows
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("MeTableViewCell", owner: self, options: nil)?.first as! MeTableViewCell
-        cell.label.text = "Sign out"
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        var resultCell = UITableViewCell()
+        if indexPath.section != 0 {
+            let cell = Bundle.main.loadNibNamed("MeTableViewCell", owner: self, options: nil)?.first as! MeTableViewCell
+            cell.label.text = menuItemList[indexPath.section][indexPath.row].labelName
+            cell.leftImageView.image = UIImage(named: menuItemList[indexPath.section][indexPath.row].leftImageName)
+            resultCell = cell
+        } else {
+            let cell = Bundle.main.loadNibNamed("BigMeTableViewCell", owner: self, options: nil)?.first as! BigMeTableViewCell
+            cell.leftImageView.image = UIImage(named: getRandomAvatar())
+            cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
+            cell.leftImageView.layer.masksToBounds = true
+            cell.topLabel.text = Auth.auth().currentUser?.displayName
+            cell.bottomLabel.text = Auth.auth().currentUser?.email
+            cell.middleImageView.image = UIImage(named: "edit")
+            resultCell = cell
+        }
+        return resultCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            showSignOutAlert()
+        tableView.deselectRow(at: indexPath, animated: true)
+        let numOfSections = numberOfSections(in: tableView)
+        if indexPath.section == numOfSections - 1 {
+            if indexPath.row == tableView.numberOfRows(inSection: numOfSections - 1) - 1 {
+                showSignOutAlert()
+            }
+        } else if indexPath.section != 0 {
+            destinationIndexPath = indexPath
+            performSegue(withIdentifier: "goToSecondary", sender: self)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height: CGFloat = Constants.UI.meTableViewCellHeight
+        if indexPath.section == 0 {
+            height = Constants.UI.bigMeTableViewCellHeight
+        }
+        return height
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Constants.UI.meTableViewSectionHeaderHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return Constants.UI.meTableViewSectionFooterHeight
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Will trigger \(segue.identifier ?? "unknown") segue")
+        let vc = segue.destination as! MeSubViewController
+        vc.sourceIndexPath = destinationIndexPath
+        let cell = tableView.cellForRow(at: destinationIndexPath) as! MeTableViewCell
+        vc.title = cell.label.text
+    }
+    
+    private func getRandomAvatar() -> String {
+        let avatars = Constants.Avatars.avatars
+        let randomIndex = Int(arc4random_uniform(UInt32(avatars.count)))
+        return avatars[randomIndex]
     }
 
 }
