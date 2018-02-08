@@ -12,18 +12,13 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableView: UITableView!
     
-    private let menuItemList: [[MenuItem]] = [
-        [
-            MenuItem(labelName: "Rate the app", leftImageName: "apple-app-store"),
-            MenuItem(labelName: "Give feedbacks", leftImageName: "post"),
-            MenuItem(labelName: "Developer", leftImageName: "hammer"),
-            MenuItem(labelName: "About Tackle", leftImageName: "about")
-        ]
-    ]
+    private var menuItemList = [[MenuItem]]()
+    
+    public var sourceIndexPath: IndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "More"
+        populateMenu(fromIndexPath: sourceIndexPath)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -59,6 +54,10 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return Constants.UI.meTableViewSectionFooterHeight
+    }
+    
+    private func populateMenu(fromIndexPath indexPath: IndexPath) {
+        menuItemList = Constants.MenuItemLists.secondaryItemLists[indexPath.section][indexPath.row]
     }
     
 }
