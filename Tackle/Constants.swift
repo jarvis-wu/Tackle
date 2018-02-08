@@ -55,7 +55,6 @@ struct Constants {
             ],
             [
                 MenuItem(labelName: "Settings", leftImageName: "gears"),
-                MenuItem(labelName: "Get help", leftImageName: "help"),
                 MenuItem(labelName: "More", leftImageName: "more")
             ],
             [
@@ -77,19 +76,21 @@ struct Constants {
             [
                 [       // 3-0 settings
                     [
-                        MenuItem(labelName: "Language", leftImageName: "language"),
+                        MenuItem(labelName: "Language", leftImageName: "language")
+                    ],
+                    [
                         MenuItem(labelName: "Color & text", leftImageName: "tune")
                     ]
                 ],
-                [       // 3-1 help
+                [       // 3-1 more
                     [
-                        MenuItem(labelName: "User Manual", leftImageName: "user-manual"),
-                        MenuItem(labelName: "Send feedbacks", leftImageName: "post"),
-                    ]
-                ],
-                [       // 3-2 more
+                        MenuItem(labelName: "Get help", leftImageName: "user-manual"),
+                    ],
                     [
                         MenuItem(labelName: "Rate the app", leftImageName: "apple-app-store"),
+                        MenuItem(labelName: "Send feedbacks", leftImageName: "post")
+                    ],
+                    [
                         MenuItem(labelName: "Developer", leftImageName: "hammer"),
                         MenuItem(labelName: "About Tackle", leftImageName: "about")
                     ]

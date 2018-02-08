@@ -21,6 +21,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        addNavBarButton()
     }
     
     private func showSignOutAlert() {
@@ -111,6 +112,20 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let avatars = Constants.Avatars.avatars
         let randomIndex = Int(arc4random_uniform(UInt32(avatars.count)))
         return avatars[randomIndex]
+    }
+    
+    private func addNavBarButton() {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "qr-code"), for: UIControlState.normal)
+        button.addTarget(self, action: #selector(self.navBarButtonPressed), for: UIControlEvents.touchUpInside)
+        button.widthAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.contentMode = .scaleAspectFit
+       self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+    }
+    
+    @objc func navBarButtonPressed() {
+        print("Nav bar button pressed")
     }
 
 }
