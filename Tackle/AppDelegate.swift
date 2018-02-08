@@ -56,21 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configureUI() {
-        let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
-        let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
         let navigationBarAppearance = UINavigationBar.appearance()
         let tabBarAppearance = UITabBar.appearance()
-        navigationBarAppearance.barTintColor = tackleYellowLight
-        navigationBarAppearance.tintColor = tackleYellowMid
-        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : tackleYellowMid]
-        tabBarAppearance.barTintColor = tackleYellowLight
-        tabBarAppearance.tintColor = tackleYellowMid
+        navigationBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
+        navigationBarAppearance.tintColor = Constants.Colors.tackleYellowMid
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Constants.Colors.tackleYellowMid]
+        tabBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
+        tabBarAppearance.tintColor = Constants.Colors.tackleYellowMid
         self.window?.backgroundColor = UIColor.white
     }
     
     func configureInstabug() {
         Instabug.start(withToken: "431a498a648f08224b6aee8894ff6cc4", invocationEvent: .shake)
-        Instabug.setPrimaryColor(UIColor(red: 247/255, green: 197/255, blue: 2/255, alpha: 1))
+        Instabug.setPrimaryColor(Constants.Colors.instabugYellow)
     }
 
 
