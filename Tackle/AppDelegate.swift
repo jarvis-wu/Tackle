@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import Instabug
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()    
         configureUI()
+        configureInstabug()
         return true
     }
 
@@ -64,6 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarAppearance.barTintColor = tackleYellowLight
         tabBarAppearance.tintColor = tackleYellowMid
         self.window?.backgroundColor = UIColor.white
+    }
+    
+    func configureInstabug() {
+        Instabug.start(withToken: "431a498a648f08224b6aee8894ff6cc4", invocationEvent: .shake)
+        Instabug.setPrimaryColor(UIColor(red: 247/255, green: 197/255, blue: 2/255, alpha: 1))
     }
 
 
