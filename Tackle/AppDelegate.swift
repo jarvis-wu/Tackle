@@ -55,16 +55,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        if let tabBarController = self.window?.rootViewController?.presentedViewController as? UITabBarController {
-            if let navBarController = tabBarController.selectedViewController as? UINavigationController {
-                if let meViewController = navBarController.topViewController as? MeViewController {
-                    if meViewController.isPresentingQRCodeViewController {
-                        return UIInterfaceOrientationMask.portrait
-                    }
-                }
-            }
+        let defaultOrientations = UIInterfaceOrientationMask.allButUpsideDown
+        guard let tabBarController = self.window?.rootViewController?.presentedViewController as? UITabBarController else { return defaultOrientations}
+        guard let navBarController = tabBarController.selectedViewController as? UINavigationController else { return defaultOrientations }
+        guard let meViewController = navBarController.topViewController as? MeViewController else { return defaultOrientations }
+        if meViewController.isPresentingQRCodeViewController {
+            return UIInterfaceOrientationMask.portrait
+        } else {
+            return defaultOrientations
         }
-        return UIInterfaceOrientationMask.all
     }
     
     func configureUI() {
