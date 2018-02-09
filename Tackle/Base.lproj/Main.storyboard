@@ -201,16 +201,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="CKz-l3-Qn5">
-                                        <rect key="frame" x="117.5" y="32" width="142.5" height="42.5"/>
+                                        <rect key="frame" x="117.5" y="32" width="44.5" height="42.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zhaowei Wu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-Lf-e9W">
-                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-Lf-e9W">
+                                                <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wuzhaowei@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZV-qi-U9o">
-                                                <rect key="frame" x="0.0" y="28" width="142.5" height="14.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZV-qi-U9o">
+                                                <rect key="frame" x="0.0" y="28" width="44.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -229,6 +229,7 @@
                                     <constraint firstAttribute="height" constant="50" id="EdD-jW-KQT"/>
                                     <constraint firstAttribute="width" secondItem="bIX-nD-V08" secondAttribute="height" multiplier="5:1" id="j7E-JL-eDc"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didTapDismissButton:" destination="RZ1-RX-MiP" eventType="touchUpInside" id="2JE-N6-XgZ"/>

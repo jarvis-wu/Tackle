@@ -9,15 +9,6 @@
 import Foundation
 import UIKit
 
-enum MenuType: String {
-    case more = "More"
-}
-
-struct MenuItem {
-    var labelName: String
-    var leftImageName: String
-}
-
 struct Constants {
     
     struct Colors {
@@ -109,6 +100,7 @@ struct Constants {
     
     struct UserDefaultsKeys {
         static let InstabugIsOn = "instabug"
+        static let CurrentUserMetadata = "currrentUserMetadata"
     }
     
 }

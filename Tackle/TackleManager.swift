@@ -10,9 +10,22 @@ import Foundation
 import UIKit
 import Instabug
 
+struct UserMetadata: Codable {
+    var userName: String
+    var userEmail: String
+    var userAvatarName: String
+}
+
+struct MenuItem {
+    var labelName: String
+    var leftImageName: String
+}
+
 class TackleManager {
     
     static let shared = TackleManager()
+    
+    // TODO: Add helper function to get user data more easily and avoid requesting UserDefaults directly
     
     // MARK: Instabug
     
@@ -45,14 +58,19 @@ class TackleManager {
     
     // MARK: UserDefaults
     
+    // TODO: Consider making switch case more concise and less error-prone
+    
     func updateSetting(withKey key: String, withValue value: Any) {
         let defaults = UserDefaults.standard
         switch key {
         case Constants.UserDefaultsKeys.InstabugIsOn:
             let bool = value as! Bool
             defaults.set(bool, forKey: key)
+        case Constants.UserDefaultsKeys.CurrentUserMetadata:
+            let metaData = value as! UserMetadata
+            defaults.set(try? PropertyListEncoder().encode(metaData), forKey: Constants.UserDefaultsKeys.CurrentUserMetadata)
         default:
-            break
+            print("Error: input key is undefined in updateSetting()")
         }
         
     }
@@ -63,8 +81,14 @@ class TackleManager {
         switch key {
         case Constants.UserDefaultsKeys.InstabugIsOn:
             result = defaults.value(forKey: key)
+        case Constants.UserDefaultsKeys.CurrentUserMetadata:
+            if let data = defaults.value(forKey: Constants.UserDefaultsKeys.CurrentUserMetadata) as? Data {
+                result = try? PropertyListDecoder().decode(UserMetadata.self, from: data)
+            } else {
+                print("ERROR")
+            }
         default:
-            break
+            print("Error: input key is undefined in getSetting()")
         }
         return result
     }

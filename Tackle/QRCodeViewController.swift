@@ -22,17 +22,10 @@ class QRCodeViewController: UIViewController {
     
     @IBOutlet weak var dismissButton: UIButton!
     
-    var avatarImage: UIImage!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         appearAnimate()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        avatarImageView.image = avatarImage
     }
     
     @IBAction func didTapDismissButton(_ sender: Any) {
@@ -57,6 +50,10 @@ class QRCodeViewController: UIViewController {
         self.view.backgroundColor = UIColor.clear
         backgroundView.layer.cornerRadius = 15
         qrCodeImageView.image = UIImage(named: "sample-qr")
+        let userMetadata = TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.CurrentUserMetadata) as! UserMetadata
+        avatarTopLabel.text = userMetadata.userName
+        avatarBottomLabel.text = userMetadata.userEmail
+        avatarImageView.image = UIImage(named: userMetadata.userAvatarName)
         avatarImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
         avatarImageView.layer.masksToBounds = true
         dismissButton.setTitle("OK", for: .normal)

@@ -53,7 +53,8 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             resultCell = cell
         } else {
             let cell = Bundle.main.loadNibNamed("BigMeTableViewCell", owner: self, options: nil)?.first as! BigMeTableViewCell
-            cell.leftImageView.image = UIImage(named: getRandomAvatar())
+            let userMetadata = TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.CurrentUserMetadata) as! UserMetadata
+            cell.leftImageView.image = UIImage(named: userMetadata.userAvatarName)
             cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
             cell.leftImageView.layer.masksToBounds = true
             cell.topLabel.text = Auth.auth().currentUser?.displayName
@@ -101,12 +102,6 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         vc.title = cell.label.text
     }
     
-    private func getRandomAvatar() -> String {
-        let avatars = Constants.Avatars.avatars
-        let randomIndex = Int(arc4random_uniform(UInt32(avatars.count)))
-        return avatars[randomIndex]
-    }
-    
     public func addQRCodeBarButton() {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "qr-code"), for: .normal)
@@ -133,9 +128,6 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.isPresentingQRCodeViewController = true
         let popvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QRCodeViewController") as! QRCodeViewController
         popvc.view.frame = self.tableView.frame
-        // TODO: pass a UserInfo object instead
-        let avatarImage = (self.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! BigMeTableViewCell).leftImageView.image
-        popvc.avatarImage = avatarImage
         self.addChildViewController(popvc)
         self.view.addSubview(popvc.view)
         popvc.didMove(toParentViewController: self)
