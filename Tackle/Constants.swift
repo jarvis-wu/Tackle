@@ -40,7 +40,7 @@ struct Constants {
     }
     
     struct Avatars {
-        static let avatars = ["corgi", "pelican", "slug-eating", "unicorn"]
+        static let avatars = ["alligator", "beaver", "corgi", "kangaroo", "panda", "pelican", "sloth", "slug-eating", "unicorn"]
     }
     
     struct MenuItemLists {

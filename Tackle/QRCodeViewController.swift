@@ -12,14 +12,27 @@ class QRCodeViewController: UIViewController {
 
     @IBOutlet weak var backgroundView: UIView!
     
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
+    @IBOutlet weak var avatarTopLabel: UILabel!
+    
+    @IBOutlet weak var avatarBottomLabel: UILabel!
+    
     @IBOutlet weak var qrCodeImageView: UIImageView!
     
     @IBOutlet weak var dismissButton: UIButton!
+    
+    var avatarImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         appearAnimate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        avatarImageView.image = avatarImage
     }
     
     @IBAction func didTapDismissButton(_ sender: Any) {
@@ -44,6 +57,8 @@ class QRCodeViewController: UIViewController {
         self.view.backgroundColor = UIColor.clear
         backgroundView.layer.cornerRadius = 15
         qrCodeImageView.image = UIImage(named: "sample-qr")
+        avatarImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
+        avatarImageView.layer.masksToBounds = true
         dismissButton.setTitle("OK", for: .normal)
         dismissButton.backgroundColor = Constants.Colors.tackleYellowLight
         dismissButton.setTitleColor(Constants.Colors.tackleYellowMid, for: .normal)

@@ -133,6 +133,9 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.isPresentingQRCodeViewController = true
         let popvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QRCodeViewController") as! QRCodeViewController
         popvc.view.frame = self.tableView.frame
+        // TODO: pass a UserInfo object instead
+        let avatarImage = (self.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! BigMeTableViewCell).leftImageView.image
+        popvc.avatarImage = avatarImage
         self.addChildViewController(popvc)
         self.view.addSubview(popvc.view)
         popvc.didMove(toParentViewController: self)
@@ -145,7 +148,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     private func showSignOutAlert() {
         let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
+        alertVC.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { (action) in
             self.signOut()
         }))
         self.present(alertVC, animated: true, completion: nil)
@@ -154,7 +157,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     private func showSaveImageAlert() {
         let alertVC = UIAlertController(title: "Save QR code", message: Constants.Strings.saveQRCodeAlertMessage, preferredStyle: .actionSheet)
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+        alertVC.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
             if let qrCodeViewController = self.childViewControllers[0] as? QRCodeViewController {
                 qrCodeViewController.saveImage()
             }
