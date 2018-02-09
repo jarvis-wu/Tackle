@@ -54,6 +54,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if let tabBarController = self.window?.rootViewController?.presentedViewController as? UITabBarController {
+            if let navBarController = tabBarController.selectedViewController as? UINavigationController {
+                if let meViewController = navBarController.topViewController as? MeViewController {
+                    if meViewController.isPresentingQRCodeViewController {
+                        return UIInterfaceOrientationMask.portrait
+                    }
+                }
+            }
+        }
+        return UIInterfaceOrientationMask.all
+    }
+    
     func configureUI() {
         let navigationBarAppearance = UINavigationBar.appearance()
         let tabBarAppearance = UITabBar.appearance()

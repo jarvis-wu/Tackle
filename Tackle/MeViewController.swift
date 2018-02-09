@@ -12,10 +12,12 @@ import FirebaseAuthUI
 class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+        
     private let menuItemList = Constants.MenuItemLists.mainMenuItemList
     
     private var destinationIndexPath: IndexPath!
+    
+    public var isPresentingQRCodeViewController = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,7 +127,13 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     @objc func navBarButtonPressed() {
-        print("Nav bar button pressed")
+        self.isPresentingQRCodeViewController = true
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        let popvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QRCodeViewController") as! QRCodeViewController
+        popvc.view.frame = self.tableView.frame
+        self.addChildViewController(popvc)
+        self.view.addSubview(popvc.view)
+        popvc.didMove(toParentViewController: self)
     }
 
 }

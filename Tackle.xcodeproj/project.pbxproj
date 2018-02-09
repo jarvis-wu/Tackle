@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA73E202CF16C00B6A166 /* TackleManager.swift */; };
+		004EA741202D430F00B6A166 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA740202D430F00B6A166 /* QRCodeViewController.swift */; };
 		009993DE202A5C1800C6ABDF /* BigMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */; };
 		009993DF202A5C1800C6ABDF /* BigMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */; };
 		009993E1202A6D5D00C6ABDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993E0202A6D5D00C6ABDF /* Constants.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		004EA73E202CF16C00B6A166 /* TackleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackleManager.swift; sourceTree = "<group>"; };
+		004EA740202D430F00B6A166 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigMeTableViewCell.swift; sourceTree = "<group>"; };
 		009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigMeTableViewCell.xib; sourceTree = "<group>"; };
 		009993E0202A6D5D00C6ABDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				3199D966200A8107003D85FB /* HomeViewController.swift */,
 				315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */,
 				3199D968200A8107003D85FB /* MeViewController.swift */,
+				004EA740202D430F00B6A166 /* QRCodeViewController.swift */,
 				009993E2202AD06800C6ABDF /* MeSubViewController.swift */,
 				004EA73E202CF16C00B6A166 /* TackleManager.swift */,
 				31016A9A20296D4000764A39 /* MeTableViewCell.swift */,
@@ -546,6 +549,7 @@
 			files = (
 				3199D969200A8107003D85FB /* MeViewController.swift in Sources */,
 				009993DE202A5C1800C6ABDF /* BigMeTableViewCell.swift in Sources */,
+				004EA741202D430F00B6A166 /* QRCodeViewController.swift in Sources */,
 				009993E3202AD06800C6ABDF /* MeSubViewController.swift in Sources */,
 				004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */,
 				31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */,

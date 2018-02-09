@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -177,6 +179,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pn-CG-cMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2263" y="340"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="2mg-US-Zzr">
+            <objects>
+                <viewController storyboardIdentifier="QRCodeViewController" id="RZ1-RX-MiP" customClass="QRCodeViewController" customModule="Tackle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cag-mQ-A65">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtX-4x-Phf">
+                                <rect key="frame" x="20" y="40" width="335" height="431.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My QR Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri2-6w-Wgr">
+                                        <rect key="frame" x="109.5" y="32" width="116.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the QR code to friend me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2G-u9-l7q">
+                                        <rect key="frame" x="68" y="386.5" width="198.5" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="oiP-ni-UkP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ri2-6w-Wgr" firstAttribute="top" secondItem="GtX-4x-Phf" secondAttribute="top" constant="32" id="ghS-wF-KTt"/>
+                                    <constraint firstItem="z2G-u9-l7q" firstAttribute="centerX" secondItem="GtX-4x-Phf" secondAttribute="centerX" id="jgG-KF-Gnv"/>
+                                    <constraint firstItem="ri2-6w-Wgr" firstAttribute="centerX" secondItem="GtX-4x-Phf" secondAttribute="centerX" id="kck-5I-hVh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIX-nD-V08">
+                                <rect key="frame" x="62.5" y="491.5" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EdD-jW-KQT"/>
+                                    <constraint firstAttribute="width" secondItem="bIX-nD-V08" secondAttribute="height" multiplier="5:1" id="j7E-JL-eDc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapDismissButton:" destination="RZ1-RX-MiP" eventType="touchUpInside" id="2JE-N6-XgZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EVa-zX-kRh">
+                                <rect key="frame" x="37.5" y="106" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EVa-zX-kRh" secondAttribute="height" multiplier="1:1" id="3f9-qk-VtJ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GtX-4x-Phf" firstAttribute="top" secondItem="fEQ-6i-b6Q" secondAttribute="top" constant="20" id="2aC-Y4-bUz"/>
+                            <constraint firstItem="bIX-nD-V08" firstAttribute="top" secondItem="GtX-4x-Phf" secondAttribute="bottom" constant="20" id="8Vu-Rk-Y4a"/>
+                            <constraint firstItem="bIX-nD-V08" firstAttribute="centerX" secondItem="fEQ-6i-b6Q" secondAttribute="centerX" id="BER-Pm-dag"/>
+                            <constraint firstItem="bIX-nD-V08" firstAttribute="centerY" secondItem="fEQ-6i-b6Q" secondAttribute="centerY" multiplier="1.8" id="HtP-KV-2eP"/>
+                            <constraint firstItem="EVa-zX-kRh" firstAttribute="centerY" secondItem="GtX-4x-Phf" secondAttribute="centerY" id="KCe-qw-h2n"/>
+                            <constraint firstItem="fEQ-6i-b6Q" firstAttribute="trailing" secondItem="GtX-4x-Phf" secondAttribute="trailing" constant="20" id="O4S-CD-2F1"/>
+                            <constraint firstItem="EVa-zX-kRh" firstAttribute="top" secondItem="ri2-6w-Wgr" secondAttribute="bottom" constant="10" id="c8m-dN-FiO"/>
+                            <constraint firstItem="EVa-zX-kRh" firstAttribute="centerX" secondItem="fEQ-6i-b6Q" secondAttribute="centerX" id="emj-6R-APN"/>
+                            <constraint firstItem="GtX-4x-Phf" firstAttribute="leading" secondItem="fEQ-6i-b6Q" secondAttribute="leading" constant="20" id="vAc-Ey-ReD"/>
+                            <constraint firstItem="z2G-u9-l7q" firstAttribute="top" secondItem="EVa-zX-kRh" secondAttribute="bottom" constant="20.5" id="wFm-a0-Zg6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fEQ-6i-b6Q"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="554"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="GtX-4x-Phf" id="UZq-Xp-QP3"/>
+                        <outlet property="dismissButton" destination="bIX-nD-V08" id="Abg-3J-Z7x"/>
+                        <outlet property="qrCodeImageView" destination="EVa-zX-kRh" id="Yon-nd-JN0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hs5-E5-cFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2262" y="-322"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="9ac-dZ-gW7">
