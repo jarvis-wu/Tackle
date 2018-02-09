@@ -23,16 +23,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        addNavBarButton()
-    }
-    
-    private func showSignOutAlert() {
-        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
-        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
-            self.signOut()
-        }))
-        self.present(alertVC, animated: true, completion: nil)
+        addQRCodeBarButton()
     }
     
     private func signOut() {
@@ -116,24 +107,59 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return avatars[randomIndex]
     }
     
-    private func addNavBarButton() {
+    public func addQRCodeBarButton() {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "qr-code"), for: UIControlState.normal)
-        button.addTarget(self, action: #selector(self.navBarButtonPressed), for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage(named: "qr-code"), for: .normal)
+        button.addTarget(self, action: #selector(self.qrCodeBarButtonPressed), for: UIControlEvents.touchUpInside)
         button.widthAnchor.constraint(equalToConstant: 25.0).isActive = true
         button.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
         button.contentMode = .scaleAspectFit
-       self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
     }
     
-    @objc func navBarButtonPressed() {
+    private func addSaveImageBarButton() {
+        self.navigationItem.rightBarButtonItems?.removeAll()
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "download"), for: .normal)
+        button.addTarget(self, action: #selector(self.saveImageBarButtonPressed), for: UIControlEvents.touchUpInside)
+        button.widthAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.contentMode = .scaleAspectFit
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
+    }
+    
+    @objc func qrCodeBarButtonPressed() {
+        addSaveImageBarButton()
         self.isPresentingQRCodeViewController = true
-        self.navigationItem.rightBarButtonItem?.isEnabled = false
         let popvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QRCodeViewController") as! QRCodeViewController
         popvc.view.frame = self.tableView.frame
         self.addChildViewController(popvc)
         self.view.addSubview(popvc.view)
         popvc.didMove(toParentViewController: self)
+    }
+    
+    @objc func saveImageBarButtonPressed() {
+        showSaveImageAlert()
+    }
+    
+    private func showSignOutAlert() {
+        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
+            self.signOut()
+        }))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    private func showSaveImageAlert() {
+        let alertVC = UIAlertController(title: "Save QR code", message: Constants.Strings.saveQRCodeAlertMessage, preferredStyle: .actionSheet)
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            if let qrCodeViewController = self.childViewControllers[0] as? QRCodeViewController {
+                qrCodeViewController.saveImage()
+            }
+        }))
+        self.present(alertVC, animated: true, completion: nil)
     }
 
 }

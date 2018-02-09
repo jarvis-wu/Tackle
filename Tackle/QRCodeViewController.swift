@@ -24,7 +24,8 @@ class QRCodeViewController: UIViewController {
     
     @IBAction func didTapDismissButton(_ sender: Any) {
         if let parent = self.parent as? MeViewController {
-            parent.navigationItem.rightBarButtonItem?.isEnabled = true
+            parent.navigationItem.rightBarButtonItems?.removeAll()
+            parent.addQRCodeBarButton()
             parent.isPresentingQRCodeViewController = false
         }
         UIView.animate(withDuration: 0.25, animations: {
@@ -62,6 +63,12 @@ class QRCodeViewController: UIViewController {
             self.view.alpha = 1.0
             self.view.transform = CGAffineTransform(translationX: 0, y: 0)
         })
+    }
+    
+    public func saveImage() {
+        UIImageWriteToSavedPhotosAlbum(qrCodeImageView.image!, nil, nil, nil)
+        // TODO: can we get higher resolution?
+        // TODO: add a toast to confirm that photo have been saved
     }
 
 }
