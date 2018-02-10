@@ -22,7 +22,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="peb-4R-KMz"/>
                     <connections>
                         <outlet property="navBarItem" destination="peb-4R-KMz" id="xMC-mV-Gec"/>
@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="utv-7w-swj" kind="relationship" relationship="rootViewController" id="hFL-vk-phd"/>
+                        <segue destination="utv-7w-swj" kind="relationship" relationship="rootViewController" id="ErP-s1-7eP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKH-3z-eTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,7 +139,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" image="user" selectedImage="user" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Me" selectedImage="user" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="Me" id="6zr-ux-lNu"/>
                     <connections>
                         <outlet property="tableView" destination="Rny-US-Keb" id="Lnx-sf-rPZ"/>
