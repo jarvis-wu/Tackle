@@ -9,16 +9,13 @@
 import Foundation
 import UIKit
 
-enum MenuType: String {
-    case more = "More"
-}
-
-struct MenuItem {
-    var labelName: String
-    var leftImageName: String
-}
-
 struct Constants {
+    
+    struct Colors {
+        static let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
+        static let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
+        static let instabugYellow = UIColor(red: 247/255, green: 197/255, blue: 2/255, alpha: 1)
+    }
     
     struct UI {
         static let profileImageCornerRadius: CGFloat = 5
@@ -30,10 +27,11 @@ struct Constants {
     
     struct Strings {
         static let logoutAlertMessage = "Are you sure that you want to sign out?"
+        static let saveQRCodeAlertMessage = "Do you want to save your QR code to camera roll?"
     }
     
     struct Avatars {
-        static let avatars = ["corgi", "pelican", "slug-eating", "unicorn"]
+        static let avatars = ["alligator", "beaver", "corgi", "kangaroo", "panda", "pelican", "sloth", "slug-eating", "unicorn"]
     }
     
     struct MenuItemLists {
@@ -49,7 +47,6 @@ struct Constants {
             ],
             [
                 MenuItem(labelName: "Settings", leftImageName: "gears"),
-                MenuItem(labelName: "Get help", leftImageName: "help"),
                 MenuItem(labelName: "More", leftImageName: "more")
             ],
             [
@@ -71,19 +68,24 @@ struct Constants {
             [
                 [       // 3-0 settings
                     [
-                        MenuItem(labelName: "Language", leftImageName: "language"),
-                        MenuItem(labelName: "Color & text", leftImageName: "tune")
-                    ]
-                ],
-                [       // 3-1 help
+                        MenuItem(labelName: "Language", leftImageName: "language")
+                    ],
                     [
-                        MenuItem(labelName: "User Manual", leftImageName: "user-manual"),
-                        MenuItem(labelName: "Send feedbacks", leftImageName: "post"),
+                        MenuItem(labelName: "Color & text", leftImageName: "tune")
+                    ],
+                    [
+                        MenuItem(labelName: "Instabug", leftImageName: "bug")
                     ]
                 ],
-                [       // 3-2 more
+                [       // 3-1 more
+                    [
+                        MenuItem(labelName: "Get help", leftImageName: "user-manual"),
+                    ],
                     [
                         MenuItem(labelName: "Rate the app", leftImageName: "apple-app-store"),
+                        MenuItem(labelName: "Send feedbacks", leftImageName: "post")
+                    ],
+                    [
                         MenuItem(labelName: "Developer", leftImageName: "hammer"),
                         MenuItem(labelName: "About Tackle", leftImageName: "about")
                     ]
@@ -94,6 +96,11 @@ struct Constants {
             ]
         ]
         
+    }
+    
+    struct UserDefaultsKeys {
+        static let InstabugIsOn = "instabug"
+        static let CurrentUserMetadata = "currrentUserMetadata"
     }
     
 }

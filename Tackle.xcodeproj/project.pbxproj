@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA73E202CF16C00B6A166 /* TackleManager.swift */; };
+		004EA741202D430F00B6A166 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA740202D430F00B6A166 /* QRCodeViewController.swift */; };
 		009993DE202A5C1800C6ABDF /* BigMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */; };
 		009993DF202A5C1800C6ABDF /* BigMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */; };
 		009993E1202A6D5D00C6ABDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993E0202A6D5D00C6ABDF /* Constants.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		004EA73E202CF16C00B6A166 /* TackleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackleManager.swift; sourceTree = "<group>"; };
+		004EA740202D430F00B6A166 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigMeTableViewCell.swift; sourceTree = "<group>"; };
 		009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigMeTableViewCell.xib; sourceTree = "<group>"; };
 		009993E0202A6D5D00C6ABDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -139,7 +143,9 @@
 				3199D966200A8107003D85FB /* HomeViewController.swift */,
 				315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */,
 				3199D968200A8107003D85FB /* MeViewController.swift */,
+				004EA740202D430F00B6A166 /* QRCodeViewController.swift */,
 				009993E2202AD06800C6ABDF /* MeSubViewController.swift */,
+				004EA73E202CF16C00B6A166 /* TackleManager.swift */,
 				31016A9A20296D4000764A39 /* MeTableViewCell.swift */,
 				31016A9B20296D4000764A39 /* MeTableViewCell.xib */,
 				009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */,
@@ -344,25 +350,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tackle/Pods-Tackle-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -482,6 +481,10 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
@@ -502,6 +505,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
@@ -542,7 +549,9 @@
 			files = (
 				3199D969200A8107003D85FB /* MeViewController.swift in Sources */,
 				009993DE202A5C1800C6ABDF /* BigMeTableViewCell.swift in Sources */,
+				004EA741202D430F00B6A166 /* QRCodeViewController.swift in Sources */,
 				009993E3202AD06800C6ABDF /* MeSubViewController.swift in Sources */,
+				004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */,
 				31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */,
 				3199D965200A8107003D85FB /* AppDelegate.swift in Sources */,
 				3199D967200A8107003D85FB /* HomeViewController.swift in Sources */,

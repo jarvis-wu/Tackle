@@ -33,6 +33,11 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         if let error = error {
             print(error.localizedDescription)
         } else {
+            if let user = authDataResult?.user {
+                let avatarName = self.getRandomAvatar()
+                let userMetaData = UserMetadata(userName: user.displayName!, userEmail: user.email!, userAvatarName: avatarName)
+                TackleManager.shared.updateSetting(withKey: Constants.UserDefaultsKeys.CurrentUserMetadata, withValue: userMetaData)
+            }
             presentTabVC()
         }
     }
@@ -51,6 +56,12 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabViewController = storyboard.instantiateViewController(withIdentifier: "TabViewController")
         present(tabViewController, animated: true, completion: nil)
+    }
+    
+    private func getRandomAvatar() -> String {
+        let avatars = Constants.Avatars.avatars
+        let randomIndex = Int(arc4random_uniform(UInt32(avatars.count)))
+        return avatars[randomIndex]
     }
 
 }

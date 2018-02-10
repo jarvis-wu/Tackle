@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()    
+        FirebaseApp.configure()
+        TackleManager.shared.startInstabug()
         configureUI()
         return true
     }
@@ -53,19 +54,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        let defaultOrientations = UIInterfaceOrientationMask.allButUpsideDown
+        guard let tabBarController = self.window?.rootViewController?.presentedViewController as? UITabBarController else { return defaultOrientations}
+        guard let navBarController = tabBarController.selectedViewController as? UINavigationController else { return defaultOrientations }
+        guard let meViewController = navBarController.topViewController as? MeViewController else { return defaultOrientations }
+        if meViewController.isPresentingQRCodeViewController {
+            return UIInterfaceOrientationMask.portrait
+        } else {
+            return defaultOrientations
+        }
+    }
+    
     func configureUI() {
-        let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
-        let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
         let navigationBarAppearance = UINavigationBar.appearance()
         let tabBarAppearance = UITabBar.appearance()
-        navigationBarAppearance.barTintColor = tackleYellowLight
-        navigationBarAppearance.tintColor = tackleYellowMid
-        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : tackleYellowMid]
-        tabBarAppearance.barTintColor = tackleYellowLight
-        tabBarAppearance.tintColor = tackleYellowMid
+        navigationBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
+        navigationBarAppearance.tintColor = Constants.Colors.tackleYellowMid
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Constants.Colors.tackleYellowMid]
+        tabBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
+        tabBarAppearance.tintColor = Constants.Colors.tackleYellowMid
         self.window?.backgroundColor = UIColor.white
     }
-
 
 }
 

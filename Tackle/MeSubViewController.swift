@@ -36,11 +36,29 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = Bundle.main.loadNibNamed("MeTableViewCell", owner: self, options: nil)?.first as! MeTableViewCell
         cell.label.text = menuItemList[indexPath.section][indexPath.row].labelName
         cell.leftImageView.image = UIImage(named: menuItemList[indexPath.section][indexPath.row].leftImageName)
+        // TODO: consider using switch case here
+        if sourceIndexPath == IndexPath(row: 0, section: 3) && indexPath == IndexPath(row: 0, section: 2) { // instabug switch
+            cell.middleImageView.image = UIImage(named: "help-gray")
+            let switchView = UISwitch()
+            if let switchState = TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) {
+                switchView.isOn = switchState as! Bool
+            } else {
+                switchView.isOn = true
+            }
+            switchView.addTarget(self, action: #selector(stateChanged(switchState:)), for: UIControlEvents.valueChanged)
+            cell.accessoryView = switchView
+            cell.rightImageView.isHidden = true
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if sourceIndexPath == IndexPath(row: 0, section: 3) && indexPath == IndexPath(row: 0, section: 2) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2, execute: {
+                TackleManager.shared.showInstabugIntroMessage()
+            })
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,6 +76,17 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func populateMenu(fromIndexPath indexPath: IndexPath) {
         menuItemList = Constants.MenuItemLists.secondaryItemLists[indexPath.section][indexPath.row]
+    }
+    
+    // Instabug switch
+    @objc func stateChanged(switchState: UISwitch) {
+        if switchState.isOn {
+            TackleManager.shared.updateSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn, withValue: true)
+            TackleManager.shared.startInstabug()
+        } else {
+            TackleManager.shared.updateSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn, withValue: false)
+            TackleManager.shared.stopInstabug()
+        }
     }
     
 }

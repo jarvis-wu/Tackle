@@ -12,24 +12,18 @@ import FirebaseAuthUI
 class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+        
     private let menuItemList = Constants.MenuItemLists.mainMenuItemList
     
     private var destinationIndexPath: IndexPath!
+    
+    public var isPresentingQRCodeViewController = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    private func showSignOutAlert() {
-        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
-        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
-            self.signOut()
-        }))
-        self.present(alertVC, animated: true, completion: nil)
+        addQRCodeBarButton()
     }
     
     private func signOut() {
@@ -59,12 +53,13 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             resultCell = cell
         } else {
             let cell = Bundle.main.loadNibNamed("BigMeTableViewCell", owner: self, options: nil)?.first as! BigMeTableViewCell
-            cell.leftImageView.image = UIImage(named: getRandomAvatar())
+            let userMetadata = TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.CurrentUserMetadata) as! UserMetadata
+            cell.leftImageView.image = UIImage(named: userMetadata.userAvatarName)
             cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
             cell.leftImageView.layer.masksToBounds = true
             cell.topLabel.text = Auth.auth().currentUser?.displayName
             cell.bottomLabel.text = Auth.auth().currentUser?.email
-            cell.middleImageView.image = UIImage(named: "edit")
+            cell.middleImageView.image = UIImage(named: "edit-gray")
             resultCell = cell
         }
         return resultCell
@@ -80,6 +75,8 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         } else if indexPath.section != 0 {
             destinationIndexPath = indexPath
             performSegue(withIdentifier: "goToSecondary", sender: self)
+        } else {
+            performSegue(withIdentifier: "goToProfile", sender: self)
         }
     }
     
@@ -101,16 +98,70 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Will trigger \(segue.identifier ?? "unknown") segue")
-        let vc = segue.destination as! MeSubViewController
-        vc.sourceIndexPath = destinationIndexPath
-        let cell = tableView.cellForRow(at: destinationIndexPath) as! MeTableViewCell
-        vc.title = cell.label.text
+        if segue.identifier == "goToSecondary" {
+            let vc = segue.destination as! MeSubViewController
+            vc.sourceIndexPath = destinationIndexPath
+            let cell = tableView.cellForRow(at: destinationIndexPath) as! MeTableViewCell
+            vc.title = cell.label.text
+        } else if segue.identifier == "goToProfile" {
+            let vc = segue.destination
+            vc.title = "Profile"
+        }
     }
     
-    private func getRandomAvatar() -> String {
-        let avatars = Constants.Avatars.avatars
-        let randomIndex = Int(arc4random_uniform(UInt32(avatars.count)))
-        return avatars[randomIndex]
+    public func addQRCodeBarButton() {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "qr-code"), for: .normal)
+        button.addTarget(self, action: #selector(self.qrCodeBarButtonPressed), for: UIControlEvents.touchUpInside)
+        button.widthAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.contentMode = .scaleAspectFit
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
+    }
+    
+    private func addSaveImageBarButton() {
+        self.navigationItem.rightBarButtonItems?.removeAll()
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "download"), for: .normal)
+        button.addTarget(self, action: #selector(self.saveImageBarButtonPressed), for: UIControlEvents.touchUpInside)
+        button.widthAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.contentMode = .scaleAspectFit
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
+    }
+    
+    @objc func qrCodeBarButtonPressed() {
+        addSaveImageBarButton()
+        self.isPresentingQRCodeViewController = true
+        let popvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QRCodeViewController") as! QRCodeViewController
+        popvc.view.frame = self.tableView.frame
+        self.addChildViewController(popvc)
+        self.view.addSubview(popvc.view)
+        popvc.didMove(toParentViewController: self)
+    }
+    
+    @objc func saveImageBarButtonPressed() {
+        showSaveImageAlert()
+    }
+    
+    private func showSignOutAlert() {
+        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { (action) in
+            self.signOut()
+        }))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    private func showSaveImageAlert() {
+        let alertVC = UIAlertController(title: "Save QR code", message: Constants.Strings.saveQRCodeAlertMessage, preferredStyle: .actionSheet)
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
+            if let qrCodeViewController = self.childViewControllers[0] as? QRCodeViewController {
+                qrCodeViewController.saveImage()
+            }
+        }))
+        self.present(alertVC, animated: true, completion: nil)
     }
 
 }
