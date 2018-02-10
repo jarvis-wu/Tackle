@@ -75,6 +75,8 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         } else if indexPath.section != 0 {
             destinationIndexPath = indexPath
             performSegue(withIdentifier: "goToSecondary", sender: self)
+        } else {
+            performSegue(withIdentifier: "goToProfile", sender: self)
         }
     }
     
@@ -96,10 +98,15 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Will trigger \(segue.identifier ?? "unknown") segue")
-        let vc = segue.destination as! MeSubViewController
-        vc.sourceIndexPath = destinationIndexPath
-        let cell = tableView.cellForRow(at: destinationIndexPath) as! MeTableViewCell
-        vc.title = cell.label.text
+        if segue.identifier == "goToSecondary" {
+            let vc = segue.destination as! MeSubViewController
+            vc.sourceIndexPath = destinationIndexPath
+            let cell = tableView.cellForRow(at: destinationIndexPath) as! MeTableViewCell
+            vc.title = cell.label.text
+        } else if segue.identifier == "goToProfile" {
+            let vc = segue.destination
+            vc.title = "Profile"
+        }
     }
     
     public func addQRCodeBarButton() {

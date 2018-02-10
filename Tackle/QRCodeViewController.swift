@@ -78,9 +78,23 @@ class QRCodeViewController: UIViewController {
     }
     
     public func saveImage() {
-        UIImageWriteToSavedPhotosAlbum(qrCodeImageView.image!, nil, nil, nil)
+        let view = self.backgroundView
+        view?.layer.cornerRadius = 0
+        let image = imageWithView(inView: view!)
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         // TODO: can we get higher resolution?
         // TODO: add a toast to confirm that photo have been saved
+    }
+    
+    private func imageWithView(inView: UIView) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(inView.bounds.size, inView.isOpaque, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        if let context = UIGraphicsGetCurrentContext() {
+            inView.layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            return image
+        }
+        return nil
     }
 
 }

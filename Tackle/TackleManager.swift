@@ -33,6 +33,7 @@ class TackleManager {
         guard (TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) == nil) ||
             (TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) as! Bool == true)
             else { return }
+        Instabug.start(withToken: "431a498a648f08224b6aee8894ff6cc4", invocationEvent: .shake)
         Instabug.setPrimaryColor(Constants.Colors.instabugYellow)
         Instabug.setShakingThresholdForiPhone(1.5, foriPad: 0.6)
         Instabug.setInvocationEvent(.shake)
@@ -40,7 +41,6 @@ class TackleManager {
         Instabug.setCrashReportingEnabled(true)
         Instabug.setPushNotificationsEnabled(true)
         Instabug.setPromptOptionsEnabledWithBug(true, feedback: true, chat: true)
-        Instabug.start(withToken: "431a498a648f08224b6aee8894ff6cc4", invocationEvent: .shake)
     }
     
     func stopInstabug() {
