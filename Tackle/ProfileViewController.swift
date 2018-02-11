@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        addEditBarButton()
     }
     
     private func configureUI() {
@@ -31,6 +32,20 @@ class ProfileViewController: UIViewController {
         avatarImageView.layer.masksToBounds = true
         avatarTopLabel.text = userMetadata.userName
         avatarBottomLabel.text = userMetadata.userEmail
+    }
+    
+    private func addEditBarButton() {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "edit"), for: .normal)
+        button.addTarget(self, action: #selector(self.editBarButtonPressed), for: UIControlEvents.touchUpInside)
+        button.widthAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
+        button.contentMode = .scaleAspectFit
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button)]
+    }
+    
+    @objc func editBarButtonPressed() {
+        print("Edit pressed")
     }
 
 }

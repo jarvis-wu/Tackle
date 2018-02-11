@@ -43,6 +43,7 @@ struct Constants {
             [
                 MenuItem(labelName: "Events", leftImageName: "calendar"),
                 MenuItem(labelName: "Friends", leftImageName: "contacts"),
+                MenuItem(labelName: "Notes", leftImageName: "note"),
                 MenuItem(labelName: "Files", leftImageName: "folder")
             ],
             [
@@ -63,7 +64,8 @@ struct Constants {
             [
                 [[]],   // 2-0 events
                 [[]],   // 2-1 friends
-                [[]]    // 2-2 files
+                [[]],   // 2-2 notes
+                [[]]    // 2-3 files
             ],
             [
                 [       // 3-0 settings

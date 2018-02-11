@@ -57,8 +57,8 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.leftImageView.image = UIImage(named: userMetadata.userAvatarName)
             cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
             cell.leftImageView.layer.masksToBounds = true
-            cell.topLabel.text = Auth.auth().currentUser?.displayName
-            cell.bottomLabel.text = Auth.auth().currentUser?.email
+            cell.topLabel.text = userMetadata.userName
+            cell.bottomLabel.text = userMetadata.userEmail
             cell.middleImageView.image = UIImage(named: "edit-gray")
             resultCell = cell
         }
