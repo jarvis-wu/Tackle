@@ -13,6 +13,7 @@
 		009993DF202A5C1800C6ABDF /* BigMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */; };
 		009993E1202A6D5D00C6ABDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993E0202A6D5D00C6ABDF /* Constants.swift */; };
 		009993E3202AD06800C6ABDF /* MeSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993E2202AD06800C6ABDF /* MeSubViewController.swift */; };
+		00F77E80202FB76F00A93025 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E7F202FB76F00A93025 /* ProfileViewController.swift */; };
 		31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31016A9A20296D4000764A39 /* MeTableViewCell.swift */; };
 		31016A9D20296D4000764A39 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31016A9B20296D4000764A39 /* MeTableViewCell.xib */; };
 		315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */; };
@@ -55,6 +56,7 @@
 		009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigMeTableViewCell.xib; sourceTree = "<group>"; };
 		009993E0202A6D5D00C6ABDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		009993E2202AD06800C6ABDF /* MeSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSubViewController.swift; sourceTree = "<group>"; };
+		00F77E7F202FB76F00A93025 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1591D9A313AE7836FFF55345 /* Pods-TackleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TackleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TackleUITests/Pods-TackleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		31016A9A20296D4000764A39 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		31016A9B20296D4000764A39 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				3199D968200A8107003D85FB /* MeViewController.swift */,
 				004EA740202D430F00B6A166 /* QRCodeViewController.swift */,
 				009993E2202AD06800C6ABDF /* MeSubViewController.swift */,
+				00F77E7F202FB76F00A93025 /* ProfileViewController.swift */,
 				004EA73E202CF16C00B6A166 /* TackleManager.swift */,
 				31016A9A20296D4000764A39 /* MeTableViewCell.swift */,
 				31016A9B20296D4000764A39 /* MeTableViewCell.xib */,
@@ -350,11 +353,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tackle/Pods-Tackle-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
@@ -553,6 +556,7 @@
 				009993E3202AD06800C6ABDF /* MeSubViewController.swift in Sources */,
 				004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */,
 				31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */,
+				00F77E80202FB76F00A93025 /* ProfileViewController.swift in Sources */,
 				3199D965200A8107003D85FB /* AppDelegate.swift in Sources */,
 				3199D967200A8107003D85FB /* HomeViewController.swift in Sources */,
 				31FE1881201545FD00243009 /* LoginViewController.swift in Sources */,
