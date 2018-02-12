@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Instabug
+import Reachability
 
 struct UserMetadata: Codable {
     var userName: String
@@ -21,9 +22,35 @@ struct MenuItem {
     var leftImageName: String
 }
 
-class TackleManager {
+class TackleManager: NSObject {
     
     static let shared = TackleManager()
+    
+    private(set) var isOffline = false {
+        didSet {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkStateHasChanged"), object: nil)
+        }
+    }
+    
+    func didGoOffline() {
+        isOffline = true
+//        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+//            while let presentedViewController = topController.presentedViewController {
+//                topController = presentedViewController
+//            }
+//            let toastMessageView = Bundle.main.loadNibNamed("ToastMessageView", owner: self, options: nil)?.first as! ToastMessageView
+//            if let tabBarController = topController as? UITabBarController {
+//                let navBarFrame = (tabBarController.selectedViewController as! UINavigationController).navigationBar.frame
+//                print(navBarFrame)
+//                toastMessageView.frame = CGRect(x: 0, y: navBarFrame.height + 20, width: navBarFrame.width, height: 25)
+//                for vc in tabBarController.viewControllers! {
+//                    let navController = vc as! UINavigationController
+//                    navController.topViewController?.view.transform = CGAffineTransform(translationX: 0, y: toastMessageView.frame.height)
+//                }
+//                tabBarController.view.addSubview(toastMessageView)
+//            }
+//        }
+    }
     
     // TODO: Add helper function to get user data more easily and avoid requesting UserDefaults directly
     

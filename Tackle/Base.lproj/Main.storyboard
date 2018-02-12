@@ -257,7 +257,7 @@
                                                             <font key="NSFont" size="14" name="ArialMT"/>
                                                         </attributes>
                                                     </fragment>
-                                                    <fragment content="3">
+                                                    <fragment content="7">
                                                         <attributes>
                                                             <font key="NSFont" size="14" name="Arial-BoldMT"/>
                                                         </attributes>
@@ -273,7 +273,7 @@
                                                             <font key="NSFont" size="14" name="ArialMT"/>
                                                         </attributes>
                                                     </fragment>
-                                                    <fragment content="21">
+                                                    <fragment content="81">
                                                         <attributes>
                                                             <font key="NSFont" size="14" name="Arial-BoldMT"/>
                                                         </attributes>
@@ -413,7 +413,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIX-nD-V08">
-                                <rect key="frame" x="62.666666666666657" y="482.66666666666669" width="249.99999999999997" height="50.000000000000057"/>
+                                <rect key="frame" x="62.666666666666657" y="489.66666666666674" width="249.99999999999997" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EdD-jW-KQT"/>
                                     <constraint firstAttribute="width" secondItem="bIX-nD-V08" secondAttribute="height" multiplier="5:1" id="j7E-JL-eDc"/>
@@ -428,7 +428,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bIX-nD-V08" firstAttribute="centerX" secondItem="fEQ-6i-b6Q" secondAttribute="centerX" id="BER-Pm-dag"/>
-                            <constraint firstItem="bIX-nD-V08" firstAttribute="centerY" secondItem="fEQ-6i-b6Q" secondAttribute="centerY" multiplier="1.8" id="HtP-KV-2eP"/>
+                            <constraint firstItem="bIX-nD-V08" firstAttribute="centerY" secondItem="fEQ-6i-b6Q" secondAttribute="centerY" multiplier="1.825" id="HtP-KV-2eP"/>
                             <constraint firstItem="fEQ-6i-b6Q" firstAttribute="trailing" secondItem="GtX-4x-Phf" secondAttribute="trailing" constant="20" id="O4S-CD-2F1"/>
                             <constraint firstItem="GtX-4x-Phf" firstAttribute="centerY" secondItem="fEQ-6i-b6Q" secondAttribute="centerY" multiplier="0.9" id="TRk-Db-hVG"/>
                             <constraint firstItem="GtX-4x-Phf" firstAttribute="leading" secondItem="fEQ-6i-b6Q" secondAttribute="leading" constant="20" id="vAc-Ey-ReD"/>
@@ -492,7 +492,7 @@
     <resources>
         <image name="home" width="30" height="30"/>
         <image name="notification" width="30" height="30"/>
-        <image name="sample-chart" width="1608" height="492"/>
+        <image name="sample-chart" width="1370" height="452"/>
         <image name="user" width="30" height="30"/>
     </resources>
 </document>

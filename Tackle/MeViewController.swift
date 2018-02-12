@@ -21,6 +21,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addReachabilityObserver()
         tableView.delegate = self
         tableView.dataSource = self
         addQRCodeBarButton()
@@ -162,6 +163,19 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         }))
         self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func addReachabilityObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(networkStateHasChanged), name: NSNotification.Name(rawValue: "networkStateHasChanged"), object: nil)
+    }
+    
+    @objc func networkStateHasChanged() {
+        if TackleManager.shared.isOffline {
+            let toastMessageView = Bundle.main.loadNibNamed("ToastMessageView", owner: self, options: nil)?.first as! ToastMessageView
+            toastMessageView.frame = CGRect(x: 0, y: self.tableView.frame.origin.y, width: self.view.frame.width, height: 25)
+            self.tableView.transform = CGAffineTransform(translationX: 0, y: toastMessageView.frame.height)
+            self.view.addSubview(toastMessageView)
+        }
     }
 
 }
