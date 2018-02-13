@@ -14,9 +14,25 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addReachabilityObserver()
         let titleImageView = UIImageView(image: UIImage(named: "plane"))
         titleImageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = titleImageView
+    }
+    
+    func addReachabilityObserver() {
+        if TackleManager.shared.isOffline {
+            TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(networkStateHasChanged), name: NSNotification.Name(rawValue: "networkStateHasChanged"), object: nil)
+    }
+    
+    @objc func networkStateHasChanged() {
+        if TackleManager.shared.isOffline {
+            TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
+        } else {
+            TackleManager.shared.shouldShowOnlineMessage(fromViewController: self)
+        }
     }
 
 }

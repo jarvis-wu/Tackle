@@ -26,30 +26,46 @@ class TackleManager: NSObject {
     
     static let shared = TackleManager()
     
-    private(set) var isOffline = false {
+    // MARK: Reachability
+    
+    public var isOffline = false {
         didSet {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkStateHasChanged"), object: nil)
         }
     }
     
-    func didGoOffline() {
-        isOffline = true
-//        if var topController = UIApplication.shared.keyWindow?.rootViewController {
-//            while let presentedViewController = topController.presentedViewController {
-//                topController = presentedViewController
-//            }
-//            let toastMessageView = Bundle.main.loadNibNamed("ToastMessageView", owner: self, options: nil)?.first as! ToastMessageView
-//            if let tabBarController = topController as? UITabBarController {
-//                let navBarFrame = (tabBarController.selectedViewController as! UINavigationController).navigationBar.frame
-//                print(navBarFrame)
-//                toastMessageView.frame = CGRect(x: 0, y: navBarFrame.height + 20, width: navBarFrame.width, height: 25)
-//                for vc in tabBarController.viewControllers! {
-//                    let navController = vc as! UINavigationController
-//                    navController.topViewController?.view.transform = CGAffineTransform(translationX: 0, y: toastMessageView.frame.height)
-//                }
-//                tabBarController.view.addSubview(toastMessageView)
-//            }
-//        }
+    func shouldShowOfflineMessage(fromViewController vc: UIViewController) {
+        if isOffline != false {
+            for subview in vc.navigationController!.view.subviews {
+                if subview is ToastMessageView {
+                    print(subview)
+                    subview.removeFromSuperview()
+                }
+            }
+            let tabBarFrame = vc.tabBarController!.tabBar.frame
+            let frame = CGRect(x: 0, y: tabBarFrame.origin.y - 25, width: tabBarFrame.width, height: 25)
+            let toastMessageView = ToastMessageView(frame: frame)
+            vc.navigationController?.view.addSubview(toastMessageView)
+        }
+    }
+    
+    func shouldShowOnlineMessage(fromViewController vc: UIViewController) {
+        if isOffline == false {
+            for subview in vc.navigationController!.view.subviews {
+                if subview is ToastMessageView {
+                    subview.removeFromSuperview()
+                }
+            }
+            let tabBarFrame = vc.tabBarController!.tabBar.frame
+            let frame = CGRect(x: 0, y: tabBarFrame.origin.y - 25, width: tabBarFrame.width, height: 25)
+            let toastMessageView = ToastMessageView(frame: frame)
+            toastMessageView.backgroundView.backgroundColor = Constants.Colors.toastGreen
+            toastMessageView.messageLabel.text = "Back online"
+            vc.navigationController?.view.addSubview(toastMessageView)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+                toastMessageView.removeFromSuperview()
+            })
+        }
     }
     
     // TODO: Add helper function to get user data more easily and avoid requesting UserDefaults directly

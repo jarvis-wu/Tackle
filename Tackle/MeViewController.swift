@@ -12,7 +12,7 @@ import FirebaseAuthUI
 class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-        
+    
     private let menuItemList = Constants.MenuItemLists.mainMenuItemList
     
     private var destinationIndexPath: IndexPath!
@@ -166,15 +166,17 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func addReachabilityObserver() {
+        if TackleManager.shared.isOffline {
+            TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(networkStateHasChanged), name: NSNotification.Name(rawValue: "networkStateHasChanged"), object: nil)
     }
     
     @objc func networkStateHasChanged() {
         if TackleManager.shared.isOffline {
-            let toastMessageView = Bundle.main.loadNibNamed("ToastMessageView", owner: self, options: nil)?.first as! ToastMessageView
-            toastMessageView.frame = CGRect(x: 0, y: self.tableView.frame.origin.y, width: self.view.frame.width, height: 25)
-            self.tableView.transform = CGAffineTransform(translationX: 0, y: toastMessageView.frame.height)
-            self.view.addSubview(toastMessageView)
+            TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
+        } else {
+            TackleManager.shared.shouldShowOnlineMessage(fromViewController: self)
         }
     }
 

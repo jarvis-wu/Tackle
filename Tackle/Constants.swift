@@ -15,6 +15,7 @@ struct Constants {
         static let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
         static let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
         static let instabugYellow = UIColor(red: 247/255, green: 197/255, blue: 2/255, alpha: 1)
+        static let toastGreen = UIColor(red: 29/255, green: 185/255, blue: 84/255, alpha: 1)
     }
     
     struct UI {

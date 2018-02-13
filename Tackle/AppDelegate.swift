@@ -86,11 +86,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch reachability.connection {
         case .wifi:
             print("Reachable via WiFi")
+            TackleManager.shared.isOffline = false
         case .cellular:
             print("Reachable via Cellular")
+            TackleManager.shared.isOffline = false
         case .none:
             print("Network not reachable")
-            TackleManager.shared.didGoOffline()
+            TackleManager.shared.isOffline = true
         }
     }
     
