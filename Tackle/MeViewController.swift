@@ -27,12 +27,6 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         addQRCodeBarButton()
     }
     
-    private func signOut() {
-        try! FUIAuth.defaultAuthUI()?.signOut()
-        let loginVC = LoginViewController()
-        self.present(loginVC, animated: true, completion: nil)
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return menuItemList.count
     }
@@ -68,12 +62,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let numOfSections = numberOfSections(in: tableView)
-        if indexPath.section == numOfSections - 1 {
-            if indexPath.row == tableView.numberOfRows(inSection: numOfSections - 1) - 1 {
-                showSignOutAlert()
-            }
-        } else if indexPath.section != 0 {
+        if indexPath.section != 0 {
             destinationIndexPath = indexPath
             performSegue(withIdentifier: "goToSecondary", sender: self)
         } else {
@@ -143,15 +132,6 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @objc func saveImageBarButtonPressed() {
         showSaveImageAlert()
-    }
-    
-    private func showSignOutAlert() {
-        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
-        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { (action) in
-            self.signOut()
-        }))
-        self.present(alertVC, animated: true, completion: nil)
     }
     
     private func showSaveImageAlert() {

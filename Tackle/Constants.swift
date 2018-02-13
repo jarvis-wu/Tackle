@@ -42,17 +42,14 @@ struct Constants {
                 MenuItem(labelName: "Forest", leftImageName: "forest")
             ],
             [
-                MenuItem(labelName: "Events", leftImageName: "calendar"),
+                MenuItem(labelName: "Tackles", leftImageName: "suitcase"),
+                MenuItem(labelName: "Agenda", leftImageName: "calendar"),
                 MenuItem(labelName: "Friends", leftImageName: "contacts"),
-                MenuItem(labelName: "Notes", leftImageName: "note"),
-                MenuItem(labelName: "Files", leftImageName: "folder")
+                MenuItem(labelName: "Notes", leftImageName: "note")
             ],
             [
                 MenuItem(labelName: "Settings", leftImageName: "gears"),
                 MenuItem(labelName: "More", leftImageName: "more")
-            ],
-            [
-                MenuItem(labelName: "Sign out", leftImageName: "shutdown")
             ]
         ]
         static let secondaryItemLists: [[[[MenuItem]]]] = [
@@ -63,10 +60,10 @@ struct Constants {
                 [[]]    // 1-0 forest
             ],
             [
-                [[]],   // 2-0 events
-                [[]],   // 2-1 friends
-                [[]],   // 2-2 notes
-                [[]]    // 2-3 files
+                [[]],   // 2-0 projects
+                [[]],   // 2-1 agenda
+                [[]],   // 2-2 friends
+                [[]]    // 2-3 notes
             ],
             [
                 [       // 3-0 settings
@@ -78,6 +75,9 @@ struct Constants {
                     ],
                     [
                         MenuItem(labelName: "Instabug", leftImageName: "bug")
+                    ],
+                    [
+                        MenuItem(labelName: "Sign out", leftImageName: "shutdown")
                     ]
                 ],
                 [       // 3-1 more
@@ -93,9 +93,6 @@ struct Constants {
                         MenuItem(labelName: "About Tackle", leftImageName: "about")
                     ]
                 ]
-            ],
-            [
-                [[]]    // 4-0 signout
             ]
         ]
         
