@@ -48,8 +48,8 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         authUI?.delegate = self
         authUI?.providers = providers
         authUI?.isSignInWithEmailHidden = true
-        let authViewController = authUI?.authViewController()
-        present(authViewController!, animated: true, completion: nil)
+        let authViewController = LoginPickerViewController(authUI: authUI!)
+        present(authViewController, animated: true, completion: nil)
     }
     
     func presentTabVC() {

@@ -16,6 +16,7 @@
 		00F77E80202FB76F00A93025 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E7F202FB76F00A93025 /* ProfileViewController.swift */; };
 		00F77E822030F71D00A93025 /* ToastMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E812030F71D00A93025 /* ToastMessageView.swift */; };
 		00F77E842030F73300A93025 /* ToastMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F77E832030F73300A93025 /* ToastMessageView.xib */; };
+		00F77E8C2033810B00A93025 /* LoginPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */; };
 		31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31016A9A20296D4000764A39 /* MeTableViewCell.swift */; };
 		31016A9D20296D4000764A39 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31016A9B20296D4000764A39 /* MeTableViewCell.xib */; };
 		315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */; };
@@ -61,6 +62,7 @@
 		00F77E7F202FB76F00A93025 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		00F77E812030F71D00A93025 /* ToastMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessageView.swift; sourceTree = "<group>"; };
 		00F77E832030F73300A93025 /* ToastMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastMessageView.xib; sourceTree = "<group>"; };
+		00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPickerViewController.swift; sourceTree = "<group>"; };
 		1591D9A313AE7836FFF55345 /* Pods-TackleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TackleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TackleUITests/Pods-TackleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		31016A9A20296D4000764A39 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		31016A9B20296D4000764A39 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				3199D964200A8107003D85FB /* AppDelegate.swift */,
 				31FE1880201545FD00243009 /* LoginViewController.swift */,
+				00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */,
 				3199D966200A8107003D85FB /* HomeViewController.swift */,
 				315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */,
 				3199D968200A8107003D85FB /* MeViewController.swift */,
@@ -565,6 +568,7 @@
 				00F77E822030F71D00A93025 /* ToastMessageView.swift in Sources */,
 				009993E3202AD06800C6ABDF /* MeSubViewController.swift in Sources */,
 				004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */,
+				00F77E8C2033810B00A93025 /* LoginPickerViewController.swift in Sources */,
 				31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */,
 				00F77E80202FB76F00A93025 /* ProfileViewController.swift in Sources */,
 				3199D965200A8107003D85FB /* AppDelegate.swift in Sources */,
