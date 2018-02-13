@@ -26,11 +26,21 @@
 				<string>com.googleusercontent.apps.874982067221-mgo7026a6sje6ii33st5mput5f0nm1p0</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb501352796925515</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow Tackle to save images to camera roll</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -62,7 +72,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Allow Tackle to save images to camera roll</string>
+	<key>FacebookAppID</key>
+	<string>501352796925515</string>
+	<key>FacebookDisplayName</key>
+	<string>Tackle</string>
 </dict>
 </plist>
