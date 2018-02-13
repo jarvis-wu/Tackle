@@ -456,7 +456,18 @@
                     <view key="view" contentMode="scaleToFill" id="g6H-nN-2Kw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="SEp-qb-LlA">
+                                <rect key="frame" x="0.0" y="-1" width="375" height="814"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SEp-qb-LlA" firstAttribute="top" secondItem="Du3-Zn-EjE" secondAttribute="top" constant="-45" id="1Yg-sa-XTq"/>
+                            <constraint firstItem="SEp-qb-LlA" firstAttribute="leading" secondItem="Du3-Zn-EjE" secondAttribute="leading" id="DrY-yj-7k4"/>
+                            <constraint firstItem="Du3-Zn-EjE" firstAttribute="trailing" secondItem="SEp-qb-LlA" secondAttribute="trailing" id="WnB-LL-4kb"/>
+                            <constraint firstItem="Du3-Zn-EjE" firstAttribute="bottom" secondItem="SEp-qb-LlA" secondAttribute="bottom" constant="-35" id="nIa-kg-yXM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Du3-Zn-EjE"/>
                     </view>
                 </viewController>
@@ -491,6 +502,7 @@
     </scenes>
     <resources>
         <image name="home" width="30" height="30"/>
+        <image name="login-bg" width="3006" height="3757"/>
         <image name="notification" width="30" height="30"/>
         <image name="sample-chart" width="1370" height="452"/>
         <image name="user" width="30" height="30"/>

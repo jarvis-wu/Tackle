@@ -76,5 +76,7 @@
 	<string>501352796925515</string>
 	<key>FacebookDisplayName</key>
 	<string>Tackle</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>
