@@ -145,7 +145,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    func addReachabilityObserver() {
+    private func addReachabilityObserver() {
         if TackleManager.shared.isOffline {
             TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
         }

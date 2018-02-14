@@ -15,7 +15,7 @@ class NotificationsViewController: UIViewController {
         addReachabilityObserver()
     }
     
-    func addReachabilityObserver() {
+    private func addReachabilityObserver() {
         if TackleManager.shared.isOffline {
             TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
         }

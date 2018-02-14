@@ -25,7 +25,7 @@ class LoginPickerViewController: FUIAuthPickerViewController {
         super.viewDidLoad()
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
-        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height)) /////
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: -45, width: width, height: height + 75))
         imageViewBackground.image = UIImage(named: "login-bg")
         imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
         view.insertSubview(imageViewBackground, at: 0)
