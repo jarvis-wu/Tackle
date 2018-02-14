@@ -50,11 +50,11 @@
             </objects>
             <point key="canvasLocation" x="783" y="-339"/>
         </scene>
-        <!--Notifications-->
+        <!--Messages-->
         <scene sceneID="FRd-AN-yog">
             <objects>
                 <navigationController id="cNh-Px-Vzb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notifications" image="notification" selectedImage="notification" id="mCO-ou-lfv"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="notification" selectedImage="notification" id="mCO-ou-lfv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nsQ-Cv-s7g">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -67,18 +67,18 @@
             </objects>
             <point key="canvasLocation" x="-759" y="743"/>
         </scene>
-        <!--Notifications-->
+        <!--Messages-->
         <scene sceneID="Dd0-kd-xOy">
             <objects>
-                <viewController id="utv-7w-swj" customClass="NotificationsViewController" customModule="Tackle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="utv-7w-swj" customClass="MessageViewController" customModule="Tackle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJy-7t-2Ob">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MD3-oV-ENL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" image="notification" id="Njb-0k-Shv"/>
-                    <navigationItem key="navigationItem" title="Notifications" id="Qbx-zi-OW1"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="notification" id="Njb-0k-Shv"/>
+                    <navigationItem key="navigationItem" title="Messages" id="Qbx-zi-OW1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqy-qs-mVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +117,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tackle everything in your life." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2z-Up-e0c">
-                                            <rect key="frame" x="99.999999999999986" y="17" width="176.66666666666663" height="16"/>
+                                            <rect key="frame" x="211.66666666666669" y="17" width="176.66666666666669" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -250,7 +250,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5I-sY-8TF">
-                                                <rect key="frame" x="111.66666666666666" y="0.0" width="111.66666666666666" height="15.666666666666666"/>
+                                                <rect key="frame" x="111.66666666666666" y="0.0" width="112" height="15.666666666666666"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Projects ">
                                                         <attributes>
@@ -266,7 +266,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4g-EU-SC3">
-                                                <rect key="frame" x="223.33333333333334" y="0.0" width="111.66666666666666" height="15.666666666666666"/>
+                                                <rect key="frame" x="223.66666666666666" y="0.0" width="111.33333333333334" height="15.666666666666666"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Tackles ">
                                                         <attributes>

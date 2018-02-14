@@ -1,5 +1,5 @@
 //
-//  NotificationsViewController.swift
+//  MessageViewController.swift
 //  Tackle
 //
 //  Created by Zhaowei Wu on 2018-01-14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController {
+class MessageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -58,6 +58,12 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if sourceIndexPath == IndexPath(row: 0, section: 3) {
+            if indexPath == IndexPath(row: 0, section: 0) {
+                showFeatureUnavailableAlert()
+            }
+            if indexPath == IndexPath(row: 0, section: 1) {
+                showFeatureUnavailableAlert()
+            }
             if indexPath == IndexPath(row: 0, section: 2) {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2, execute: {
                     TackleManager.shared.showInstabugIntroMessage()
@@ -95,6 +101,12 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
             TackleManager.shared.updateSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn, withValue: false)
             TackleManager.shared.stopInstabug()
         }
+    }
+    
+    private func showFeatureUnavailableAlert() {
+        let alertVC = UIAlertController(title: "Sorry", message: Constants.Strings.featureUnavailableAlertMessage, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     private func showSignOutAlert() {

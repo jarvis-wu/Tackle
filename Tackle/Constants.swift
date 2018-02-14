@@ -26,6 +26,7 @@ struct Constants {
     }
     
     struct Strings {
+        static let featureUnavailableAlertMessage = "This feature is unavailable as of now. Please stay tuned."
         static let logoutAlertMessage = "Are you sure that you want to sign out?"
         static let saveQRCodeAlertMessage = "Do you want to save your QR code to camera roll?"
     }

@@ -20,7 +20,7 @@
 		00F77E8C2033810B00A93025 /* LoginPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */; };
 		31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31016A9A20296D4000764A39 /* MeTableViewCell.swift */; };
 		31016A9D20296D4000764A39 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31016A9B20296D4000764A39 /* MeTableViewCell.xib */; };
-		315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */; };
+		315D54A1200C4F3800EDAF61 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D54A0200C4F3800EDAF61 /* MessageViewController.swift */; };
 		315D54A3200C536900EDAF61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 315D54A2200C536900EDAF61 /* GoogleService-Info.plist */; };
 		3199D965200A8107003D85FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D964200A8107003D85FB /* AppDelegate.swift */; };
 		3199D967200A8107003D85FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199D966200A8107003D85FB /* HomeViewController.swift */; };
@@ -69,7 +69,7 @@
 		1591D9A313AE7836FFF55345 /* Pods-TackleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TackleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TackleUITests/Pods-TackleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		31016A9A20296D4000764A39 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		31016A9B20296D4000764A39 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
-		315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		315D54A0200C4F3800EDAF61 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		315D54A2200C536900EDAF61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3199D961200A8107003D85FB /* Tackle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tackle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3199D964200A8107003D85FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +124,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		005E3BB02034A9B200B8FCE4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				31FE1880201545FD00243009 /* LoginViewController.swift */,
+				00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */,
+				3199D966200A8107003D85FB /* HomeViewController.swift */,
+				315D54A0200C4F3800EDAF61 /* MessageViewController.swift */,
+				3199D968200A8107003D85FB /* MeViewController.swift */,
+				004EA740202D430F00B6A166 /* QRCodeViewController.swift */,
+				009993E2202AD06800C6ABDF /* MeSubViewController.swift */,
+				00F77E7F202FB76F00A93025 /* ProfileViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		005E3BB12034A9D700B8FCE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				31016A9A20296D4000764A39 /* MeTableViewCell.swift */,
+				31016A9B20296D4000764A39 /* MeTableViewCell.xib */,
+				009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */,
+				009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */,
+				00F77E812030F71D00A93025 /* ToastMessageView.swift */,
+				00F77E832030F73300A93025 /* ToastMessageView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3199D958200A8107003D85FB = {
 			isa = PBXGroup;
 			children = (
@@ -151,21 +179,9 @@
 			children = (
 				00F77E8D2033932C00A93025 /* Tackle.entitlements */,
 				3199D964200A8107003D85FB /* AppDelegate.swift */,
-				31FE1880201545FD00243009 /* LoginViewController.swift */,
-				00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */,
-				3199D966200A8107003D85FB /* HomeViewController.swift */,
-				315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */,
-				3199D968200A8107003D85FB /* MeViewController.swift */,
-				004EA740202D430F00B6A166 /* QRCodeViewController.swift */,
-				009993E2202AD06800C6ABDF /* MeSubViewController.swift */,
-				00F77E7F202FB76F00A93025 /* ProfileViewController.swift */,
 				004EA73E202CF16C00B6A166 /* TackleManager.swift */,
-				31016A9A20296D4000764A39 /* MeTableViewCell.swift */,
-				31016A9B20296D4000764A39 /* MeTableViewCell.xib */,
-				009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */,
-				009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */,
-				00F77E812030F71D00A93025 /* ToastMessageView.swift */,
-				00F77E832030F73300A93025 /* ToastMessageView.xib */,
+				005E3BB02034A9B200B8FCE4 /* View Controllers */,
+				005E3BB12034A9D700B8FCE4 /* Views */,
 				3199D96A200A8107003D85FB /* Main.storyboard */,
 				3199D96F200A8107003D85FB /* LaunchScreen.storyboard */,
 				0057DCF22033E975007DDEEE /* Extensions.swift */,
@@ -585,7 +601,7 @@
 				0057DCF32033E975007DDEEE /* Extensions.swift in Sources */,
 				3199D967200A8107003D85FB /* HomeViewController.swift in Sources */,
 				31FE1881201545FD00243009 /* LoginViewController.swift in Sources */,
-				315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */,
+				315D54A1200C4F3800EDAF61 /* MessageViewController.swift in Sources */,
 				009993E1202A6D5D00C6ABDF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
