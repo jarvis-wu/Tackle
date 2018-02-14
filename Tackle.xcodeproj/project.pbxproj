@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA73E202CF16C00B6A166 /* TackleManager.swift */; };
 		004EA741202D430F00B6A166 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA740202D430F00B6A166 /* QRCodeViewController.swift */; };
+		0057DCF32033E975007DDEEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DCF22033E975007DDEEE /* Extensions.swift */; };
 		009993DE202A5C1800C6ABDF /* BigMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */; };
 		009993DF202A5C1800C6ABDF /* BigMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */; };
 		009993E1202A6D5D00C6ABDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993E0202A6D5D00C6ABDF /* Constants.swift */; };
 		009993E3202AD06800C6ABDF /* MeSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993E2202AD06800C6ABDF /* MeSubViewController.swift */; };
+		00F77E80202FB76F00A93025 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E7F202FB76F00A93025 /* ProfileViewController.swift */; };
+		00F77E822030F71D00A93025 /* ToastMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E812030F71D00A93025 /* ToastMessageView.swift */; };
+		00F77E842030F73300A93025 /* ToastMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F77E832030F73300A93025 /* ToastMessageView.xib */; };
+		00F77E8C2033810B00A93025 /* LoginPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */; };
 		31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31016A9A20296D4000764A39 /* MeTableViewCell.swift */; };
 		31016A9D20296D4000764A39 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31016A9B20296D4000764A39 /* MeTableViewCell.xib */; };
 		315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */; };
@@ -51,10 +56,16 @@
 /* Begin PBXFileReference section */
 		004EA73E202CF16C00B6A166 /* TackleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackleManager.swift; sourceTree = "<group>"; };
 		004EA740202D430F00B6A166 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		0057DCF22033E975007DDEEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigMeTableViewCell.swift; sourceTree = "<group>"; };
 		009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigMeTableViewCell.xib; sourceTree = "<group>"; };
 		009993E0202A6D5D00C6ABDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		009993E2202AD06800C6ABDF /* MeSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSubViewController.swift; sourceTree = "<group>"; };
+		00F77E7F202FB76F00A93025 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		00F77E812030F71D00A93025 /* ToastMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessageView.swift; sourceTree = "<group>"; };
+		00F77E832030F73300A93025 /* ToastMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastMessageView.xib; sourceTree = "<group>"; };
+		00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPickerViewController.swift; sourceTree = "<group>"; };
+		00F77E8D2033932C00A93025 /* Tackle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tackle.entitlements; sourceTree = "<group>"; };
 		1591D9A313AE7836FFF55345 /* Pods-TackleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TackleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TackleUITests/Pods-TackleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		31016A9A20296D4000764A39 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		31016A9B20296D4000764A39 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
@@ -138,20 +149,26 @@
 		3199D963200A8107003D85FB /* Tackle */ = {
 			isa = PBXGroup;
 			children = (
+				00F77E8D2033932C00A93025 /* Tackle.entitlements */,
 				3199D964200A8107003D85FB /* AppDelegate.swift */,
 				31FE1880201545FD00243009 /* LoginViewController.swift */,
+				00F77E8B2033810B00A93025 /* LoginPickerViewController.swift */,
 				3199D966200A8107003D85FB /* HomeViewController.swift */,
 				315D54A0200C4F3800EDAF61 /* NotificationsViewController.swift */,
 				3199D968200A8107003D85FB /* MeViewController.swift */,
 				004EA740202D430F00B6A166 /* QRCodeViewController.swift */,
 				009993E2202AD06800C6ABDF /* MeSubViewController.swift */,
+				00F77E7F202FB76F00A93025 /* ProfileViewController.swift */,
 				004EA73E202CF16C00B6A166 /* TackleManager.swift */,
 				31016A9A20296D4000764A39 /* MeTableViewCell.swift */,
 				31016A9B20296D4000764A39 /* MeTableViewCell.xib */,
 				009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */,
 				009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */,
+				00F77E812030F71D00A93025 /* ToastMessageView.swift */,
+				00F77E832030F73300A93025 /* ToastMessageView.xib */,
 				3199D96A200A8107003D85FB /* Main.storyboard */,
 				3199D96F200A8107003D85FB /* LaunchScreen.storyboard */,
+				0057DCF22033E975007DDEEE /* Extensions.swift */,
 				009993E0202A6D5D00C6ABDF /* Constants.swift */,
 				3199D96D200A8107003D85FB /* Assets.xcassets */,
 				3199D972200A8107003D85FB /* Info.plist */,
@@ -279,6 +296,11 @@
 					3199D960200A8107003D85FB = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					3199D976200A8107003D85FB = {
 						CreatedOnToolsVersion = 9.1;
@@ -319,6 +341,7 @@
 			files = (
 				31016A9D20296D4000764A39 /* MeTableViewCell.xib in Resources */,
 				3199D971200A8107003D85FB /* LaunchScreen.storyboard in Resources */,
+				00F77E842030F73300A93025 /* ToastMessageView.xib in Resources */,
 				315D54A3200C536900EDAF61 /* GoogleService-Info.plist in Resources */,
 				3199D96E200A8107003D85FB /* Assets.xcassets in Resources */,
 				009993DF202A5C1800C6ABDF /* BigMeTableViewCell.xib in Resources */,
@@ -486,6 +509,7 @@
 				"${PODS_ROOT}/Instabug/InstabugCore.framework",
 				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
@@ -510,6 +534,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
@@ -550,10 +575,14 @@
 				3199D969200A8107003D85FB /* MeViewController.swift in Sources */,
 				009993DE202A5C1800C6ABDF /* BigMeTableViewCell.swift in Sources */,
 				004EA741202D430F00B6A166 /* QRCodeViewController.swift in Sources */,
+				00F77E822030F71D00A93025 /* ToastMessageView.swift in Sources */,
 				009993E3202AD06800C6ABDF /* MeSubViewController.swift in Sources */,
 				004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */,
+				00F77E8C2033810B00A93025 /* LoginPickerViewController.swift in Sources */,
 				31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */,
+				00F77E80202FB76F00A93025 /* ProfileViewController.swift in Sources */,
 				3199D965200A8107003D85FB /* AppDelegate.swift in Sources */,
+				0057DCF32033E975007DDEEE /* Extensions.swift in Sources */,
 				3199D967200A8107003D85FB /* HomeViewController.swift in Sources */,
 				31FE1881201545FD00243009 /* LoginViewController.swift in Sources */,
 				315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */,
@@ -724,6 +753,7 @@
 			baseConfigurationReference = 32C07C1251ABD5DC4DF73CDA /* Pods-Tackle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tackle/Tackle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W329T93473;
 				INFOPLIST_FILE = Tackle/Info.plist;
@@ -740,6 +770,7 @@
 			baseConfigurationReference = 4CE9F18786F02C9F945A241C /* Pods-Tackle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tackle/Tackle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W329T93473;
 				INFOPLIST_FILE = Tackle/Info.plist;

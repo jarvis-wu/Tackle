@@ -12,7 +12,7 @@ import FirebaseAuthUI
 class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-        
+    
     private let menuItemList = Constants.MenuItemLists.mainMenuItemList
     
     private var destinationIndexPath: IndexPath!
@@ -21,15 +21,10 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addReachabilityObserver()
         tableView.delegate = self
         tableView.dataSource = self
         addQRCodeBarButton()
-    }
-    
-    private func signOut() {
-        try! FUIAuth.defaultAuthUI()?.signOut()
-        let loginVC = LoginViewController()
-        self.present(loginVC, animated: true, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,8 +52,8 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.leftImageView.image = UIImage(named: userMetadata.userAvatarName)
             cell.leftImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
             cell.leftImageView.layer.masksToBounds = true
-            cell.topLabel.text = Auth.auth().currentUser?.displayName
-            cell.bottomLabel.text = Auth.auth().currentUser?.email
+            cell.topLabel.text = userMetadata.userName
+            cell.bottomLabel.text = userMetadata.userEmail
             cell.middleImageView.image = UIImage(named: "edit-gray")
             resultCell = cell
         }
@@ -67,12 +62,7 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let numOfSections = numberOfSections(in: tableView)
-        if indexPath.section == numOfSections - 1 {
-            if indexPath.row == tableView.numberOfRows(inSection: numOfSections - 1) - 1 {
-                showSignOutAlert()
-            }
-        } else if indexPath.section != 0 {
+        if indexPath.section != 0 {
             destinationIndexPath = indexPath
             performSegue(withIdentifier: "goToSecondary", sender: self)
         } else {
@@ -144,15 +134,6 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         showSaveImageAlert()
     }
     
-    private func showSignOutAlert() {
-        let alertVC = UIAlertController(title: "Sign out", message: Constants.Strings.logoutAlertMessage, preferredStyle: .actionSheet)
-        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { (action) in
-            self.signOut()
-        }))
-        self.present(alertVC, animated: true, completion: nil)
-    }
-    
     private func showSaveImageAlert() {
         let alertVC = UIAlertController(title: "Save QR code", message: Constants.Strings.saveQRCodeAlertMessage, preferredStyle: .actionSheet)
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -162,6 +143,21 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         }))
         self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    private func addReachabilityObserver() {
+        if TackleManager.shared.isOffline {
+            TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(networkStateHasChanged), name: NSNotification.Name(rawValue: "networkStateHasChanged"), object: nil)
+    }
+    
+    @objc func networkStateHasChanged() {
+        if TackleManager.shared.isOffline {
+            TackleManager.shared.shouldShowOfflineMessage(fromViewController: self)
+        } else {
+            TackleManager.shared.shouldShowOnlineMessage(fromViewController: self)
+        }
     }
 
 }

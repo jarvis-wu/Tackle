@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Instabug
+import Reachability
 
 struct UserMetadata: Codable {
     var userName: String
@@ -21,9 +22,51 @@ struct MenuItem {
     var leftImageName: String
 }
 
-class TackleManager {
+class TackleManager: NSObject {
     
     static let shared = TackleManager()
+    
+    // MARK: Reachability
+    
+    public var isOffline = false {
+        didSet {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkStateHasChanged"), object: nil)
+        }
+    }
+    
+    func shouldShowOfflineMessage(fromViewController vc: UIViewController) {
+        if isOffline != false {
+            for subview in vc.navigationController!.view.subviews {
+                if subview is ToastMessageView {
+                    print(subview)
+                    subview.removeFromSuperview()
+                }
+            }
+            let tabBarFrame = vc.tabBarController!.tabBar.frame
+            let frame = CGRect(x: 0, y: tabBarFrame.origin.y - 25, width: tabBarFrame.width, height: 25)
+            let toastMessageView = ToastMessageView(frame: frame)
+            vc.navigationController?.view.addSubview(toastMessageView)
+        }
+    }
+    
+    func shouldShowOnlineMessage(fromViewController vc: UIViewController) {
+        if isOffline == false {
+            for subview in vc.navigationController!.view.subviews {
+                if subview is ToastMessageView {
+                    subview.removeFromSuperview()
+                }
+            }
+            let tabBarFrame = vc.tabBarController!.tabBar.frame
+            let frame = CGRect(x: 0, y: tabBarFrame.origin.y - 25, width: tabBarFrame.width, height: 25)
+            let toastMessageView = ToastMessageView(frame: frame)
+            toastMessageView.backgroundView.backgroundColor = Constants.Colors.toastGreen
+            toastMessageView.messageLabel.text = "Back online"
+            vc.navigationController?.view.addSubview(toastMessageView)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+                toastMessageView.removeFromSuperview()
+            })
+        }
+    }
     
     // TODO: Add helper function to get user data more easily and avoid requesting UserDefaults directly
     
@@ -34,7 +77,7 @@ class TackleManager {
             (TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) as! Bool == true)
             else { return }
         Instabug.start(withToken: "431a498a648f08224b6aee8894ff6cc4", invocationEvent: .shake)
-        Instabug.setPrimaryColor(Constants.Colors.instabugYellow)
+        Instabug.setPrimaryColor(Constants.Colors.tackleDarkGray)
         Instabug.setShakingThresholdForiPhone(1.5, foriPad: 0.6)
         Instabug.setInvocationEvent(.shake)
         Instabug.setUserStepsEnabled(true)

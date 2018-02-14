@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    let reachability = Reachability()!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // TODO: Not recommended. Consider change it later.
+        Thread.sleep(forTimeInterval: 1.0)
+        checkReachability()
         FirebaseApp.configure()
         TackleManager.shared.startInstabug()
         configureUI()
+        UIApplication.shared.isStatusBarHidden = false
         return true
     }
 
@@ -66,14 +73,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func checkReachability() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged), name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+        switch reachability.connection {
+        case .wifi:
+            print("Reachable via WiFi")
+            TackleManager.shared.isOffline = false
+        case .cellular:
+            print("Reachable via Cellular")
+            TackleManager.shared.isOffline = false
+        case .none:
+            print("Network not reachable")
+            TackleManager.shared.isOffline = true
+        }
+    }
+    
     func configureUI() {
         let navigationBarAppearance = UINavigationBar.appearance()
         let tabBarAppearance = UITabBar.appearance()
-        navigationBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
-        navigationBarAppearance.tintColor = Constants.Colors.tackleYellowMid
-        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Constants.Colors.tackleYellowMid]
-        tabBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
-        tabBarAppearance.tintColor = Constants.Colors.tackleYellowMid
+        navigationBarAppearance.barTintColor = UIColor.white
+        navigationBarAppearance.tintColor = Constants.Colors.tackleDarkGray
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Constants.Colors.tackleDarkGray]
+        tabBarAppearance.barTintColor = UIColor.white
+        tabBarAppearance.tintColor = Constants.Colors.tackleDarkGray
         self.window?.backgroundColor = UIColor.white
     }
 

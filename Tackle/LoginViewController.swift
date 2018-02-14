@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
+import FirebaseFacebookAuthUI
 
 class LoginViewController: UIViewController, FUIAuthDelegate {
 
@@ -44,18 +45,18 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
     
     func login() {
         let authUI = FUIAuth.defaultAuthUI()
-        let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
+        let providers: [FUIAuthProvider] = [FUIGoogleAuth(), FUIFacebookAuth()]
         authUI?.delegate = self
         authUI?.providers = providers
         authUI?.isSignInWithEmailHidden = true
-        let authViewController = authUI?.authViewController()
-        present(authViewController!, animated: true, completion: nil)
+        let authViewController = LoginPickerViewController(authUI: authUI!)
+        present(authViewController, animated: false, completion: nil)
     }
     
     func presentTabVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabViewController = storyboard.instantiateViewController(withIdentifier: "TabViewController")
-        present(tabViewController, animated: true, completion: nil)
+        present(tabViewController, animated: false, completion: nil)
     }
     
     private func getRandomAvatar() -> String {
