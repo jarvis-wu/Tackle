@@ -57,8 +57,8 @@ class QRCodeViewController: UIViewController {
         avatarImageView.layer.cornerRadius = Constants.UI.profileImageCornerRadius
         avatarImageView.layer.masksToBounds = true
         dismissButton.setTitle("OK", for: .normal)
-        dismissButton.backgroundColor = Constants.Colors.tackleYellowLight
-        dismissButton.setTitleColor(Constants.Colors.tackleYellowMid, for: .normal)
+        dismissButton.backgroundColor = UIColor.white
+        dismissButton.setTitleColor(Constants.Colors.tackleDarkGray, for: .normal)
         dismissButton.layer.cornerRadius = 15
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)

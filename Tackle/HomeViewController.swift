@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addReachabilityObserver()
-        let titleImageView = UIImageView(image: UIImage(named: "plane"))
+        let titleImageView = UIImageView(image: UIImage(named: "black-plane")?.resize(scaledToSize: CGSize(width: 30, height: 30)))
         titleImageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = titleImageView
     }

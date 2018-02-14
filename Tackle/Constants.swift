@@ -12,9 +12,8 @@ import UIKit
 struct Constants {
     
     struct Colors {
-        static let tackleYellowLight = UIColor(red: 255/255, green: 218/255, blue: 12/255, alpha: 1)
-        static let tackleYellowMid = UIColor(red: 206/255, green: 144/255, blue: 0/255, alpha: 1)
-        static let instabugYellow = UIColor(red: 247/255, green: 197/255, blue: 2/255, alpha: 1)
+        static let tackleDarkGray = UIColor(red: 35/255, green: 35/255, blue: 35/255, alpha: 1)
+        static let tackleLightGray = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         static let toastGreen = UIColor(red: 29/255, green: 185/255, blue: 84/255, alpha: 1)
     }
     
@@ -32,7 +31,7 @@ struct Constants {
     }
     
     struct Avatars {
-        static let avatars = ["alligator", "beaver", "corgi", "kangaroo", "panda", "pelican", "sloth", "slug-eating", "unicorn"]
+        static let avatars = ["sample-avatar"]
     }
     
     struct MenuItemLists {

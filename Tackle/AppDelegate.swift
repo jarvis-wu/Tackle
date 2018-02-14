@@ -100,11 +100,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureUI() {
         let navigationBarAppearance = UINavigationBar.appearance()
         let tabBarAppearance = UITabBar.appearance()
-        navigationBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
-        navigationBarAppearance.tintColor = Constants.Colors.tackleYellowMid
-        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Constants.Colors.tackleYellowMid]
-        tabBarAppearance.barTintColor = Constants.Colors.tackleYellowLight
-        tabBarAppearance.tintColor = Constants.Colors.tackleYellowMid
+        navigationBarAppearance.barTintColor = UIColor.white
+        navigationBarAppearance.tintColor = Constants.Colors.tackleDarkGray
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Constants.Colors.tackleDarkGray]
+        tabBarAppearance.barTintColor = UIColor.white
+        tabBarAppearance.tintColor = Constants.Colors.tackleDarkGray
         self.window?.backgroundColor = UIColor.white
     }
 

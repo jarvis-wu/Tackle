@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		004EA73F202CF16C00B6A166 /* TackleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA73E202CF16C00B6A166 /* TackleManager.swift */; };
 		004EA741202D430F00B6A166 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EA740202D430F00B6A166 /* QRCodeViewController.swift */; };
+		0057DCF32033E975007DDEEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DCF22033E975007DDEEE /* Extensions.swift */; };
 		009993DE202A5C1800C6ABDF /* BigMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */; };
 		009993DF202A5C1800C6ABDF /* BigMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */; };
 		009993E1202A6D5D00C6ABDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009993E0202A6D5D00C6ABDF /* Constants.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		004EA73E202CF16C00B6A166 /* TackleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackleManager.swift; sourceTree = "<group>"; };
 		004EA740202D430F00B6A166 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		0057DCF22033E975007DDEEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		009993DC202A5C1800C6ABDF /* BigMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigMeTableViewCell.swift; sourceTree = "<group>"; };
 		009993DD202A5C1800C6ABDF /* BigMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigMeTableViewCell.xib; sourceTree = "<group>"; };
 		009993E0202A6D5D00C6ABDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				00F77E832030F73300A93025 /* ToastMessageView.xib */,
 				3199D96A200A8107003D85FB /* Main.storyboard */,
 				3199D96F200A8107003D85FB /* LaunchScreen.storyboard */,
+				0057DCF22033E975007DDEEE /* Extensions.swift */,
 				009993E0202A6D5D00C6ABDF /* Constants.swift */,
 				3199D96D200A8107003D85FB /* Assets.xcassets */,
 				3199D972200A8107003D85FB /* Info.plist */,
@@ -579,6 +582,7 @@
 				31016A9C20296D4000764A39 /* MeTableViewCell.swift in Sources */,
 				00F77E80202FB76F00A93025 /* ProfileViewController.swift in Sources */,
 				3199D965200A8107003D85FB /* AppDelegate.swift in Sources */,
+				0057DCF32033E975007DDEEE /* Extensions.swift in Sources */,
 				3199D967200A8107003D85FB /* HomeViewController.swift in Sources */,
 				31FE1881201545FD00243009 /* LoginViewController.swift in Sources */,
 				315D54A1200C4F3800EDAF61 /* NotificationsViewController.swift in Sources */,

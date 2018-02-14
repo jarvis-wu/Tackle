@@ -194,13 +194,13 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iny-bm-Zda">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="356.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="281.33333333333331"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="iny-bm-Zda" secondAttribute="height" multiplier="1:0.95" id="rgG-M5-KQb"/>
+                                            <constraint firstAttribute="width" secondItem="iny-bm-Zda" secondAttribute="height" multiplier="1:0.75" id="rgG-M5-KQb"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jd0-vd-enV">
-                                        <rect key="frame" x="20" y="336.66666666666669" width="75" height="75"/>
+                                        <rect key="frame" x="20" y="261.33333333333331" width="75" height="75"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="hWM-yC-qGE"/>
@@ -208,7 +208,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vjw-6L-j8S">
-                                        <rect key="frame" x="115.00000000000001" y="372" width="51.666666666666671" height="39.666666666666686"/>
+                                        <rect key="frame" x="115.00000000000001" y="296.66666666666669" width="51.666666666666671" height="39.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coD-Cb-azQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="51.666666666666664" height="24"/>
@@ -225,13 +225,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world. This is Tackle!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwb-PK-Yk1">
-                                        <rect key="frame" x="20" y="421.66666666666669" width="335" height="17"/>
+                                        <rect key="frame" x="20" y="346.33333333333331" width="335" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0G-VZ-trs">
-                                        <rect key="frame" x="20" y="449" width="335" height="15.666666666666686"/>
+                                        <rect key="frame" x="20" y="373.66666666666669" width="335" height="15.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62I-d7-lYs">
                                                 <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="15.666666666666666"/>
@@ -250,7 +250,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5I-sY-8TF">
-                                                <rect key="frame" x="111.66666666666666" y="0.0" width="112" height="15.666666666666666"/>
+                                                <rect key="frame" x="111.66666666666666" y="0.0" width="111.66666666666666" height="15.666666666666666"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Projects ">
                                                         <attributes>
@@ -266,7 +266,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4g-EU-SC3">
-                                                <rect key="frame" x="223.66666666666666" y="0.0" width="111.33333333333334" height="15.666666666666666"/>
+                                                <rect key="frame" x="223.33333333333334" y="0.0" width="111.66666666666666" height="15.666666666666666"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Tackles ">
                                                         <attributes>
@@ -288,7 +288,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vKb-dl-ODD">
-                                        <rect key="frame" x="20" y="479.66666666666669" width="335" height="137.66666666666669"/>
+                                        <rect key="frame" x="20" y="404.33333333333331" width="335" height="137.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzW-x3-c8w">
                                                 <rect key="frame" x="0.0" y="0.0" width="123.66666666666667" height="18"/>
@@ -297,7 +297,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample-chart" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-C8-OZc">
-                                                <rect key="frame" x="0.0" y="26.000000000000007" width="335" height="111.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="26.000000000000064" width="335" height="111.66666666666669"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ScA-C8-OZc" secondAttribute="height" multiplier="3:1" id="nif-AR-HSa"/>
                                                 </constraints>
@@ -418,7 +418,7 @@
                                     <constraint firstAttribute="height" constant="50" id="EdD-jW-KQT"/>
                                     <constraint firstAttribute="width" secondItem="bIX-nD-V08" secondAttribute="height" multiplier="5:1" id="j7E-JL-eDc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didTapDismissButton:" destination="RZ1-RX-MiP" eventType="touchUpInside" id="2JE-N6-XgZ"/>
@@ -485,7 +485,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
-                                <color key="value" red="0.89803921568627454" green="0.66274509803921566" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -504,7 +504,7 @@
         <image name="home" width="30" height="30"/>
         <image name="login-bg" width="3006" height="3757"/>
         <image name="notification" width="30" height="30"/>
-        <image name="sample-chart" width="1370" height="452"/>
+        <image name="sample-chart" width="1566" height="474"/>
         <image name="user" width="30" height="30"/>
     </resources>
 </document>

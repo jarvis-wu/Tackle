@@ -77,7 +77,7 @@ class TackleManager: NSObject {
             (TackleManager.shared.getSetting(withKey: Constants.UserDefaultsKeys.InstabugIsOn) as! Bool == true)
             else { return }
         Instabug.start(withToken: "431a498a648f08224b6aee8894ff6cc4", invocationEvent: .shake)
-        Instabug.setPrimaryColor(Constants.Colors.instabugYellow)
+        Instabug.setPrimaryColor(Constants.Colors.tackleDarkGray)
         Instabug.setShakingThresholdForiPhone(1.5, foriPad: 0.6)
         Instabug.setInvocationEvent(.shake)
         Instabug.setUserStepsEnabled(true)
