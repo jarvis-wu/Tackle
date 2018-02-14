@@ -10,6 +10,7 @@ target 'Tackle' do
     pod 'FirebaseUI'
     pod 'Instabug'
     pod 'ReachabilitySwift'
+    pod 'Popover'
 
   target 'TackleTests' do
     inherit! :search_paths

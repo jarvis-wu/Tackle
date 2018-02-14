@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Popover
 
 class HomeViewController: UIViewController {
     
@@ -51,7 +52,19 @@ class HomeViewController: UIViewController {
     }
     
     @objc func plusBarButtonPressed() {
-        print("Plus button pressed")
+        let popView = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 200))
+        let startPoint = CGPoint(x: self.view.frame.width - 30, y: self.navigationController!.navigationBar.frame.height + 20)
+        let options = [
+            PopoverOption.type(.down),
+            PopoverOption.cornerRadius(10.0),
+            PopoverOption.animationIn(0.3),
+            PopoverOption.arrowSize(CGSize(width: 14, height: 10)),
+            PopoverOption.blackOverlayColor(UIColor.clear),
+            PopoverOption.color(UIColor.white),
+            PopoverOption.sideEdge(15.0)
+            ] as [PopoverOption]
+        let popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
+        popover.show(popView, point: startPoint)
     }
 
 }
