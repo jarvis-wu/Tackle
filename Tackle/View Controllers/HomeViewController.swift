@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.isStatusBarHidden = false
         addReachabilityObserver()
         configureUI()
     }

@@ -121,7 +121,7 @@ class MeSubViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func signOut() {
         try! FUIAuth.defaultAuthUI()?.signOut()
         let loginVC = LoginViewController()
-        self.present(loginVC, animated: true, completion: nil)
+        self.present(loginVC, animated: false, completion: nil)
     }
     
 }

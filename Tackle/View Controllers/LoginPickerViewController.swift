@@ -19,13 +19,13 @@ class LoginPickerViewController: FUIAuthPickerViewController {
         super.init(coder: aDecoder)
     }
     
-    // TODO: change constants according to device to avoid inconsistent UI
+    // TODO: buggy for iPhone X
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
-        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: -45, width: width, height: height + 75))
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: -44, width: width, height: height + 80))
         imageViewBackground.image = UIImage(named: "login-bg")
         imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
         view.insertSubview(imageViewBackground, at: 0)

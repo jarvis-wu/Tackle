@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         TackleManager.shared.startInstabug()
         configureUI()
-        UIApplication.shared.isStatusBarHidden = false
         return true
     }
 

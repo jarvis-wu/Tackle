@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,18 +25,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="96o-6U-8VP">
-                                <rect key="frame" x="0.0" y="-1" width="375" height="814"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="814"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tackle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpD-fp-b1W">
-                                <rect key="frame" x="148.66666666666666" y="697.66666666666663" width="77.666666666666657" height="35"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="32"/>
+                                <rect key="frame" x="139" y="214" width="97" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="GGa-bY-TCC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-plane" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-3S-fid">
-                                <rect key="frame" x="158" y="627.66666666666663" width="60" height="60"/>
+                                <rect key="frame" x="148" y="144" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="FMY-9J-h8L"/>
+                                    <constraint firstAttribute="height" constant="80" id="FMY-9J-h8L"/>
                                     <constraint firstAttribute="width" secondItem="a0e-3S-fid" secondAttribute="height" multiplier="1:1" id="pbj-71-UZQ"/>
                                 </constraints>
                             </imageView>
@@ -45,13 +48,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CpD-fp-b1W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="113-FU-nPt"/>
+                            <constraint firstItem="a0e-3S-fid" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="97K-4K-2SI"/>
                             <constraint firstItem="a0e-3S-fid" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Egd-dn-1Im"/>
-                            <constraint firstItem="96o-6U-8VP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-45" id="LSh-XW-JFZ"/>
-                            <constraint firstItem="CpD-fp-b1W" firstAttribute="top" secondItem="a0e-3S-fid" secondAttribute="bottom" constant="10" id="Uq1-xo-Fjj"/>
+                            <constraint firstItem="96o-6U-8VP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="LSh-XW-JFZ"/>
+                            <constraint firstItem="CpD-fp-b1W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="Pep-Pf-Ty9"/>
                             <constraint firstItem="96o-6U-8VP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vik-Wz-Ygg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="96o-6U-8VP" secondAttribute="bottom" constant="-35" id="WC9-Gy-sOd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="96o-6U-8VP" secondAttribute="bottom" constant="-36" id="WC9-Gy-sOd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="96o-6U-8VP" secondAttribute="trailing" id="bdX-Be-tCU"/>
-                            <constraint firstItem="a0e-3S-fid" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.6" id="nkH-jL-2AQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
